@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-function PageLink(props: { href: string; boxicon: string; text: string }) {
+function PageLink(props: {
+  active: string;
+  setActive: Function;
+  href: string;
+  boxicon: string;
+  text: string;
+}) {
   const aTailwind = [
     //nav-link scrollto active
     "focus: flex",
@@ -18,19 +24,22 @@ function PageLink(props: { href: string; boxicon: string; text: string }) {
     (el) => "hover:" + el
   );
 
-  const iTailwind = ["text-3xl", "pr-2", "text-gray-500"];
+  const iTailwind = ["text-3xl", "pr-2"];
 
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
-
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
 
   return (
-    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={() => props.setActive(props.href)}
+    >
       <a
         href={props.href}
         className={[...aTailwind, ...aHoverTailwind].join(" ")}
@@ -39,7 +48,9 @@ function PageLink(props: { href: string; boxicon: string; text: string }) {
           className={[
             props.boxicon,
             ...iTailwind,
-            isHovered ? "text-anchorBlue" : "",
+            isHovered || props.active === props.href
+              ? "text-anchorBlue"
+              : "text-gray-500",
           ].join(" ")}
         ></i>
         <span>{props.text}</span>
@@ -54,17 +65,33 @@ export default function PageLinks() {
   const ulTailwind = ["relative", "whitespace-nowrap"];
   const liTailwind = [...ulTailwind];
 
+  const [active, setActive] = useState("#hero");
+
   return (
     <nav id="navbar" className={navLinksTailwind.join(" ")}>
       <ul className={ulTailwind.join(" ")}>
         <li className={liTailwind.join(" ")}>
-          <PageLink href="#hero" text="Home" boxicon="bx bx-home bx-sm" />
-        </li>
-        <li className={liTailwind.join(" ")}>
-          <PageLink href="#about" text="About" boxicon="bx bx-user bx-sm" />
+          <PageLink
+            active={active}
+            setActive={setActive}
+            href="#hero"
+            text="Home"
+            boxicon="bx bx-home bx-sm"
+          />
         </li>
         <li className={liTailwind.join(" ")}>
           <PageLink
+            active={active}
+            setActive={setActive}
+            href="#about"
+            text="About"
+            boxicon="bx bx-user bx-sm"
+          />
+        </li>
+        <li className={liTailwind.join(" ")}>
+          <PageLink
+            active={active}
+            setActive={setActive}
             href="#resume"
             text="Resume"
             boxicon="bx bx-file-blank bx-sm"
@@ -72,6 +99,8 @@ export default function PageLinks() {
         </li>
         <li className={liTailwind.join(" ")}>
           <PageLink
+            active={active}
+            setActive={setActive}
             href="#portfolio"
             text="Portfolio"
             boxicon="bx bx-book-content bx-sm"
@@ -80,6 +109,8 @@ export default function PageLinks() {
         {/* <!-- <li><a href="#services" className="nav-link scrollto"><i className="bx bx-server"></i> <span>Services</span></a></li> --> */}
         <li className={liTailwind.join(" ")}>
           <PageLink
+            active={active}
+            setActive={setActive}
             href="#contact"
             text="Contact"
             boxicon="bx bx-envelope bx-sm"
