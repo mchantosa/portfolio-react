@@ -53,6 +53,7 @@ export default function SocialMediaLinks() {
     "font-semibold",
     "text-center",
     "text-white",
+    "mt-4",
     poppins.className,
   ];
   const socialLinksTailwind = ["mt-3", "flex", "justify-center"];

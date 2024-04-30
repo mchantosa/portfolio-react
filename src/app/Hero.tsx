@@ -3,23 +3,13 @@ import { raleway } from "./fonts";
 import { poppins } from "./fonts";
 import { TypeAnimation } from "react-type-animation";
 import { useEffect, useState } from "react";
+import { useMounted } from "./utils/hooks";
 /* 
   - Uses inline styles
   - Media query wrapped in event handler 
   - Triggered with state change on window resize
   - Window not defined error controlled with mount state
 */
-
-export const useMounted = () => {
-  const [mounted, setMounted] = useState<boolean>();
-  // effects run only client-side
-  // so we can detect when the component is hydrated/mounted
-  // @see https://react.dev/reference/react/useEffect
-  useEffect(() => {
-    setMounted(true); //fires once at the beginning and when the dependencies [] change
-  }, []);
-  return mounted;
-};
 
 const HeroTypeAnimation = () => {
   const mounted = useMounted();
@@ -39,7 +29,6 @@ const HeroTypeAnimation = () => {
     letterSpacing: "1px",
   };
 
-  // Responsive styling
   if (mounted && window.innerWidth <= 500) {
     pStyle.fontSize = "20px";
   }
@@ -72,16 +61,6 @@ const HeroTypeAnimation = () => {
 };
 
 export default function Hero() {
-  //Trigger media query on window resize
-  const [size, setSize] = useState(0);
-  const handleWindowSizeChange = () => {
-    setSize(window.innerWidth); //Updates state
-  };
-  const mounted = useMounted();
-  if (mounted) {
-    window.addEventListener("resize", handleWindowSizeChange); //trigger a rerender on window resize
-  }
-
   // Define styles
   const heroTailwind = "flex flex-col justify-center items-center";
   const overlayStyle: React.CSSProperties = {
@@ -113,6 +92,10 @@ export default function Hero() {
     color: "#fff",
   };
 
+  //Trigger media query on window resize
+  const [size, setSize] = useState(0);
+  const mounted = useMounted();
+
   if (mounted) {
     // Responsive styling
     if (window.innerWidth >= 1024) {
@@ -128,6 +111,20 @@ export default function Hero() {
       heroContainerStyle.width = "calc(100vw - 75px)";
     }
   }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth);
+    };
+
+    // Listen for resize events
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once after mount
 
   return (
     <>

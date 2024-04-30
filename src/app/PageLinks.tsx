@@ -11,7 +11,6 @@ function PageLink(props: {
     //nav-link scrollto active
     "focus: flex",
     "items-center",
-    "text-gray-300",
     "p-3",
     "mb-2",
     "transition",
@@ -42,7 +41,11 @@ function PageLink(props: {
     >
       <a
         href={props.href}
-        className={[...aTailwind, ...aHoverTailwind].join(" ")}
+        className={[
+          ...aTailwind,
+          ...aHoverTailwind,
+          props.active === props.href ? "text-white" : "text-gray-400",
+        ].join(" ")}
       >
         <i
           className={[
@@ -60,7 +63,7 @@ function PageLink(props: {
 }
 
 export default function PageLinks() {
-  const navLinksTailwind = ["pt-30"]; //navbar
+  const navLinksTailwind = ["pt-8"]; //navbar
   // const navLinksChildrenTailwind = ["m-0", "p-0", "list-none"]; //scrollto active
   const ulTailwind = ["relative", "whitespace-nowrap"];
   const liTailwind = [...ulTailwind];
