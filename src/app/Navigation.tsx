@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import SocialMediaLinks from "./SocialMediaLinks";
 import PageLinks from "./PageLinks";
 
-function Menu() {
+function Menu(props: { isOpen: boolean }) {
   const menuTailwind = [
     "fixed",
     "top-0",
@@ -15,6 +15,11 @@ function Menu() {
     "py-6",
     "bg-darkGrayBlackBlue",
     "overflow-y-auto",
+    // "transition-transform",
+    // "duration-500",
+    // "sm:duration-700",
+    // "ease-in-out",
+    // props.isOpen ? "translate-x-0" : "-translate-x-full",
   ];
 
   return (
@@ -92,7 +97,7 @@ export default function Navigation() {
   return (
     <>
       {hasMobileToggle && <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />}
-      {isOpen && <Menu />}
+      {isOpen && <Menu isOpen={isOpen} />}
     </>
   );
 }

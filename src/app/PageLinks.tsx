@@ -8,22 +8,27 @@ function PageLink(props: {
   text: string;
 }) {
   const aTailwind = [
-    //nav-link scrollto active
     "focus: flex",
     "items-center",
     "p-3",
     "mb-2",
+    "text-sm",
     "transition",
     "duration-300",
     "ease-in-out",
-    "text-base",
   ];
 
   const aHoverTailwind = ["text-white", "no-underline"].map(
     (el) => "hover:" + el
   );
 
-  const iTailwind = ["text-3xl", "pr-2"];
+  const iTailwind = [
+    "text-3xl",
+    "pr-2",
+    "transition",
+    "duration-300",
+    "ease-in-out",
+  ];
 
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
