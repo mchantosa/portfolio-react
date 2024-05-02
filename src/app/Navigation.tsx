@@ -1,36 +1,43 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import SocialMediaLinks from "./SocialMediaLinks";
 import PageLinks from "./PageLinks";
+import { Drawer } from "@material-tailwind/react";
+import { useGlobalState } from "./contexts/GlobalStateContexts";
 
-function Menu(props: { isOpen: boolean }) {
+function Menu() {
+  const { openMenu } = useGlobalState();
   const menuTailwind = [
     "fixed",
     "top-0",
     "left-0",
     "bottom-0",
     "w-72",
-    "z-50",
-    "px-4",
-    "py-6",
+    "p-4",
     "bg-darkGrayBlackBlue",
     "overflow-y-auto",
-    // "transition-transform",
-    // "duration-500",
-    // "sm:duration-700",
-    // "ease-in-out",
-    // props.isOpen ? "translate-x-0" : "-translate-x-full",
   ];
 
   return (
-    <div className={menuTailwind.join(" ")}>
-      <SocialMediaLinks />
-      <PageLinks />
-    </div>
+    <Drawer
+      open={openMenu}
+      overlay={false}
+      className={menuTailwind.join(" ")}
+      // onClose={() => setIsOpen(false)}
+      placeholder={undefined}
+      onPointerEnterCapture={undefined}
+      onPointerLeaveCapture={undefined}
+    >
+      <div className="mb-6">
+        <SocialMediaLinks />
+        <PageLinks />
+      </div>
+    </Drawer>
   );
 }
 
-function Hamburger(props: { isOpen: boolean; setIsOpen: Function }) {
+function Hamburger() {
+  const { openMenu, setOpenMenu, hasMobileToggle } = useGlobalState();
   const hamburgerTailwind = [
     "flex", // Flex container
     "items-center", // Center items vertically
@@ -40,7 +47,6 @@ function Hamburger(props: { isOpen: boolean; setIsOpen: Function }) {
     "right-4",
     "w-10",
     "h-10",
-    "z-50",
     "text-white",
     "bg-anchorBlue",
     "cursor-pointer",
@@ -49,18 +55,24 @@ function Hamburger(props: { isOpen: boolean; setIsOpen: Function }) {
 
   return (
     <>
-      {!props.isOpen && (
-        <div className={[...hamburgerTailwind].join(" ")}>
+      {hasMobileToggle && (
+        <div className={hamburgerTailwind.join(" ")} style={{ zIndex: 9999 }}>
           <i
-            onClick={() => props.setIsOpen(true)}
+            onClick={() => {
+              setOpenMenu(true);
+              document.body.style.overflow = "hidden";
+            }}
             className="bx bx-menu bx-sm"
           ></i>
         </div>
       )}
-      {props.isOpen && (
-        <div className={[...hamburgerTailwind].join(" ")}>
+      {openMenu && (
+        <div className={hamburgerTailwind.join(" ")} style={{ zIndex: 9999 }}>
           <i
-            onClick={() => props.setIsOpen(false)}
+            onClick={() => {
+              setOpenMenu(false);
+              document.body.style.overflow = "auto";
+            }}
             className="bx bx-x bx-sm"
           ></i>
         </div>
@@ -70,34 +82,33 @@ function Hamburger(props: { isOpen: boolean; setIsOpen: Function }) {
 }
 
 export default function Navigation() {
-  const [hasMobileToggle, setHasMobileToggle] = useState(false);
-  const [isOpen, setIsOpen] = useState(true);
+  const { hasMobileToggle, setHasMobileToggle, openMenu, setOpenMenu } =
+    useGlobalState();
+
+  const handleResize = () => {
+    if (window.innerWidth > 1240) {
+      setHasMobileToggle(false);
+      setOpenMenu(true);
+    } else {
+      setHasMobileToggle(true);
+      setOpenMenu(false);
+    }
+  };
 
   useEffect(() => {
-    // Check the window size after the component is mounted
-    const handleResize = () => {
-      if (window.innerWidth > 1240) {
-        setHasMobileToggle(false);
-        setIsOpen(true);
-      } else {
-        setHasMobileToggle(true);
-        setIsOpen(false);
-      }
-    };
+    handleResize(); //Call on initial render
+    window.addEventListener("resize", handleResize); // Handle resize
 
-    // Listen for resize events
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup function
     return () => {
+      // Cleanup function
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // Empty dependency array ensures this effect runs only once after mount
+  }, []);
 
   return (
     <>
-      {hasMobileToggle && <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />}
-      {isOpen && <Menu isOpen={isOpen} />}
+      {hasMobileToggle && <Hamburger />}
+      {openMenu && <Menu />}
     </>
   );
 }

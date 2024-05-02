@@ -4,6 +4,7 @@ import { poppins } from "./fonts";
 import { TypeAnimation } from "react-type-animation";
 import { useEffect, useState } from "react";
 import { useMounted } from "./utils/hooks";
+
 /* 
   - Uses inline styles
   - Media query wrapped in event handler 

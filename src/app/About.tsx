@@ -1,67 +1,111 @@
-function Carousel() {
+"use client";
+import { Carousel } from "@material-tailwind/react";
+import type { CarouselProps } from "@material-tailwind/react";
+import Section from "./Section";
+function AboutMeCarousel() {
+  const carouselProps: CarouselProps = {
+    transition: { type: "tween", duration: 0.4 },
+    autoplay: true,
+    children: undefined,
+    loop: true,
+  };
   return (
-    <div className="about-slider swiper">
-      <div className="swiper-wrapper align-items-center">
-        <div className="swiper-slide">
-          <img src="/img/aboutme/about-me-1.jpg" className="img-fluid" alt="" />
-        </div>
-        <div className="swiper-slide">
-          <img src="/img/aboutme/about-me-2.jpg" className="img-fluid" alt="" />
-        </div>
-        <div className="swiper-slide">
-          <img src="/img/aboutme/about-me-3.jpg" className="img-fluid" alt="" />
-        </div>
-        <div className="swiper-slide">
-          <img src="/img/aboutme/about-me-4.jpg" className="img-fluid" alt="" />
-        </div>
-        <div className="swiper-slide">
-          <img src="/img/aboutme/about-me-5.jpg" className="img-fluid" alt="" />
-        </div>
-      </div>
-      <div className="swiper-pagination"></div>
-    </div>
+    <Carousel
+      placeholder={undefined}
+      onPointerEnterCapture={undefined}
+      onPointerLeaveCapture={undefined}
+      {...carouselProps}
+      className="rounded-xl"
+    >
+      <img
+        src="/img/aboutme/about-me-1.jpg"
+        className="h-full w-full object-cover"
+        alt=""
+      />
+      <img
+        src="/img/aboutme/about-me-2.jpg"
+        className="h-full w-full object-cover"
+        alt=""
+      />
+      <img
+        src="/img/aboutme/about-me-3.jpg"
+        className="h-full w-full object-cover"
+        alt=""
+      />
+      <img
+        src="/img/aboutme/about-me-4.jpg"
+        className="h-full w-full object-cover"
+        alt=""
+      />
+      <img
+        src="/img/aboutme/about-me-5.jpg"
+        className="h-full w-full object-cover"
+        alt=""
+      />
+    </Carousel>
   );
 }
 function AboutMeDetailed() {
+  const h3Tailwind = ["font-bold", "text-2xl", "text-headerBlue"];
+  const pTailwind = ["italic"];
+  const ulTailwind = ["list-none", "p-0"];
+  const liTailwind = ["mb-20", "flex", "items-center"];
+  const liStrongTailwind = ["mr-10"];
+  const liIconTailwind = [
+    "bx",
+    "bx-chevron-right",
+    "bx-xs",
+    "mr-4",
+    "text-anchorBlue",
+    "leading-none",
+  ];
   return (
     <>
-      <h3>
+      <h3 className={h3Tailwind.join(" ")}>
         Software Engineer, Fullstack Developer, Frontend, Backend, Web Developer
         &amp; Quality Assurance Engineer.
       </h3>
-      <p className="fst-italic">
+      <p className={pTailwind.join(" ")}>
         I enjoy hiking, reading, pushups, cuddling my naked cat, fire pits,
         coffee, tea, good food, Star Trek, SciFi, Scrabble, and puzzles.
       </p>
       <div className="row">
-        <div className="col-lg-6">
-          <ul>
-            <li>
-              <i className="bi bi-chevron-right"></i> <strong>Degree:</strong>{" "}
+        <div className="w-6/12">
+          <ul className={ulTailwind.join(" ")}>
+            <li className={liTailwind.join(" ")}>
+              <i className={liIconTailwind.join(" ")}></i>{" "}
+              <strong className={liStrongTailwind.join(" ")}>Degree:</strong>{" "}
               <span>MA Mathematics</span>
             </li>
-            <li>
-              <i className="bi bi-chevron-right"></i>{" "}
-              <strong>Availability:</strong> <span>Open to work</span>
+            <li className={liTailwind.join(" ")}>
+              <i className={liIconTailwind.join(" ")}></i>{" "}
+              <strong className={liStrongTailwind.join(" ")}>
+                Availability:
+              </strong>{" "}
+              <span>Open to work</span>
             </li>
-            <li>
-              <i className="bi bi-chevron-right"></i>{" "}
-              <strong>Freelance:</strong> <span>Available</span>
+            <li className={liTailwind.join(" ")}>
+              <i className={liIconTailwind.join(" ")}></i>{" "}
+              <strong className={liStrongTailwind.join(" ")}>Freelance:</strong>{" "}
+              <span>Available</span>
             </li>
           </ul>
         </div>
-        <div className="col-lg-6">
-          <ul>
-            <li>
-              <i className="bi bi-chevron-right"></i> <strong>Email:</strong>{" "}
+        <div className="w-6/12">
+          <ul className={ulTailwind.join(" ")}>
+            <li className={liTailwind.join(" ")}>
+              <i className={liIconTailwind.join(" ")}></i>{" "}
+              <strong className={liStrongTailwind.join(" ")}>Email:</strong>{" "}
               <span>meganemmamoore@gmail.com</span>
             </li>
-            <li>
-              <i className="bi bi-chevron-right"></i> <strong>Phone:</strong>{" "}
+            <li className={liTailwind.join(" ")}>
+              <i className={liIconTailwind.join(" ")}></i>{" "}
+              <strong className={liStrongTailwind.join(" ")}>Phone:</strong>{" "}
               <span>336-978-4359</span>
             </li>
-            <li>
-              <i className="bi bi-chevron-right"></i> <strong>City:</strong>{" "}
+            <li className={liTailwind.join(" ")}>
+              <i className={liIconTailwind.join(" ")}></i>{" "}
+              <strong className={liStrongTailwind.join(" ")}>City:</strong>{" "}
               <span>Seattle, WA</span>
             </li>
           </ul>
@@ -80,36 +124,27 @@ function AboutMeDetailed() {
   );
 }
 export default function About() {
+  const pTailwind = ["text-sm"];
   return (
-    <>
-      <section id="about" className="about">
-        <div className="container">
-          <div className="section-title">
-            <h2>About</h2>
-            <p>
-              I am a software engineer, veteran, and mathematician. My passion
-              lies in problem-solving, games, and puzzles. I spent several years
-              doing Modeling and Simulation (primarily for DOD and DHS), then
-              did a career transition to the software development space. In my
-              spare time you would likely find me reading <u>The Expanse</u>,
-              playing MTG, patronizing my local coffee shop, working out, or
-              hiking in the beautiful PNW. I am enthusiastic, pragmatic, and
-              committed to personal and professional development.
-            </p>
-          </div>
-
-          <div className="row">
-            <div className="col-lg-5">
-              {" "}
-              {/* <!-- data-aos="fade-right" --> */}
-              <Carousel />
-            </div>
-            <div className="col-lg-7 pt-4 pt-lg-0 content" data-aos="fade-left">
-              <AboutMeDetailed />
-            </div>
-          </div>
+    <Section id="about" title="About" theme="white">
+      <p className={pTailwind.join(" ")}>
+        I am a software engineer, veteran, and mathematician. My passion lies in
+        problem-solving, games, and puzzles. I spent several years doing
+        Modeling and Simulation (primarily for DOD and DHS), then did a career
+        transition to the software development space. In my spare time you would
+        likely find me reading <u>The Expanse</u>, playing MTG, patronizing my
+        local coffee shop, working out, or hiking in the beautiful PNW. I am
+        enthusiastic, pragmatic, and committed to personal and professional
+        development.
+      </p>
+      <div>
+        <div className="w-5/12">
+          <AboutMeCarousel />
         </div>
-      </section>
-    </>
+        <div className="w-7/12 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <AboutMeDetailed />
+        </div>
+      </div>
+    </Section>
   );
 }

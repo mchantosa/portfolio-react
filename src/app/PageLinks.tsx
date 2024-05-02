@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useGlobalState } from "./contexts/GlobalStateContexts";
 
 function PageLink(props: {
   active: string;
@@ -7,6 +8,8 @@ function PageLink(props: {
   boxicon: string;
   text: string;
 }) {
+  const { openMenu, setOpenMenu, hasMobileToggle, setHasMobileToggle } =
+    useGlobalState();
   const aTailwind = [
     "focus: flex",
     "items-center",
@@ -42,7 +45,12 @@ function PageLink(props: {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={() => props.setActive(props.href)}
+      onClick={() => {
+        props.setActive(props.href);
+        if (hasMobileToggle) {
+          setOpenMenu(false);
+        }
+      }}
     >
       <a
         href={props.href}
