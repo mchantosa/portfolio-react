@@ -29,9 +29,16 @@ module.exports = withMT({
         darkGray: "#2c2f3f",
         medDarkGray: "#212431",
         anchorBlue: "#149ddd",
+        anchorBlueHover: "#37b3ed",
         headerBlue: "#173b6c",
         backgroundGray: "f5f8fd",
+        paragraphText: "#272829",
       },
+      // variants: {
+      //   extend: {
+      //     textDecoration: ["hover"], // Enable hover variant for text decoration
+      //   },
+      // },
     },
   },
   plugins: [],

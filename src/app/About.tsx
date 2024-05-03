@@ -2,6 +2,9 @@
 import { Carousel } from "@material-tailwind/react";
 import type { CarouselProps } from "@material-tailwind/react";
 import Section from "./Section";
+import Row from "./Row";
+import { paragraphTailwind, anchorTailwind } from "./styles/style";
+
 function AboutMeCarousel() {
   const carouselProps: CarouselProps = {
     transition: { type: "tween", duration: 0.4 },
@@ -46,15 +49,15 @@ function AboutMeCarousel() {
   );
 }
 function AboutMeDetailed() {
-  const h3Tailwind = ["font-bold", "text-2xl", "text-headerBlue"];
-  const pTailwind = ["italic"];
+  const h3Tailwind = ["font-bold", "text-2xl", "text-headerBlue", "pb-4"];
+  const pTailwind = [...paragraphTailwind, "italic", "pb-4"];
   const ulTailwind = ["list-none", "p-0"];
-  const liTailwind = ["mb-20", "flex", "items-center"];
-  const liStrongTailwind = ["mr-10"];
+  const liTailwind = ["pb-4", "flex", "items-center"];
+  const liStrongTailwind = ["mr-4"];
   const liIconTailwind = [
     "bx",
     "bx-chevron-right",
-    "bx-xs",
+    "bx-sm",
     "mr-4",
     "text-anchorBlue",
     "leading-none",
@@ -62,15 +65,15 @@ function AboutMeDetailed() {
   return (
     <>
       <h3 className={h3Tailwind.join(" ")}>
-        Software Engineer, Fullstack Developer, Frontend, Backend, Web Developer
-        &amp; Quality Assurance Engineer.
+        Software Engineer, Fullstack Developer, Web Developer, Mathematician, QA
+        Engineer
       </h3>
       <p className={pTailwind.join(" ")}>
         I enjoy hiking, reading, pushups, cuddling my naked cat, fire pits,
         coffee, tea, good food, Star Trek, SciFi, Scrabble, and puzzles.
       </p>
-      <div className="row">
-        <div className="w-6/12">
+      <Row scale="small">
+        <div className="w-full sm:w-6/12">
           <ul className={ulTailwind.join(" ")}>
             <li className={liTailwind.join(" ")}>
               <i className={liIconTailwind.join(" ")}></i>{" "}
@@ -91,7 +94,7 @@ function AboutMeDetailed() {
             </li>
           </ul>
         </div>
-        <div className="w-6/12">
+        <div className="w-full sm:w-6/12">
           <ul className={ulTailwind.join(" ")}>
             <li className={liTailwind.join(" ")}>
               <i className={liIconTailwind.join(" ")}></i>{" "}
@@ -110,10 +113,14 @@ function AboutMeDetailed() {
             </li>
           </ul>
         </div>
-      </div>
+      </Row>
       <p>
         I am currently training AI through code evaluation and annotation with{" "}
-        <a href="https://www.dataannotation.tech/" target="_blank">
+        <a
+          href="https://www.dataannotation.tech/"
+          className={anchorTailwind.join(" ")}
+          target="_blank"
+        >
           DataAnnotation
         </a>
         . I also do freelance development on the side. Feel free to reach out if
@@ -124,27 +131,29 @@ function AboutMeDetailed() {
   );
 }
 export default function About() {
-  const pTailwind = ["text-sm"];
+  const pTailwind = paragraphTailwind;
   return (
     <Section id="about" title="About" theme="white">
-      <p className={pTailwind.join(" ")}>
-        I am a software engineer, veteran, and mathematician. My passion lies in
-        problem-solving, games, and puzzles. I spent several years doing
-        Modeling and Simulation (primarily for DOD and DHS), then did a career
-        transition to the software development space. In my spare time you would
-        likely find me reading <u>The Expanse</u>, playing MTG, patronizing my
-        local coffee shop, working out, or hiking in the beautiful PNW. I am
-        enthusiastic, pragmatic, and committed to personal and professional
-        development.
-      </p>
-      <div>
-        <div className="w-5/12">
+      <Row scale="large">
+        <p className={pTailwind.join(" ")}>
+          I am a software engineer, veteran, and mathematician. My passion lies
+          in problem-solving, games, and puzzles. I spent several years doing
+          Modeling and Simulation (primarily for DOD and DHS), then did a career
+          transition to the software development space. In my spare time you
+          would likely find me reading <u>The Expanse</u>, playing MTG,
+          patronizing my local coffee shop, working out, or hiking in the
+          beautiful PNW. I am enthusiastic, pragmatic, and committed to personal
+          and professional development.
+        </p>
+      </Row>
+      <Row scale="large">
+        <div className="lg:w-5/12 w-full max-w-2xl pb-4">
           <AboutMeCarousel />
         </div>
-        <div className="w-7/12 pt-4 pt-lg-0 content" data-aos="fade-left">
+        <div className="w-full lg:w-7/12">
           <AboutMeDetailed />
         </div>
-      </div>
+      </Row>
     </Section>
   );
 }

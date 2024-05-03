@@ -9,12 +9,8 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body {
-  /* font-family: "Open Sans", sans-serif; */
-  color: #272829;
-}
 
-a {
+/* a {
   color: #149ddd;
   text-decoration: none;
 }
@@ -22,7 +18,7 @@ a {
 a:hover {
   color: #37b3ed;
   text-decoration: underline;
-}
+} */
 
 h1,
 h2,
@@ -69,26 +65,6 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-
-
-.container,
-.container-fluid {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-@media (max-width: 1199px) {
-
-  #main {
-    margin-left: 0;
-  }
-
-  .container,
-  .container-fluid {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -159,7 +135,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
@@ -541,7 +517,7 @@ h6 {
 }
 
 .testimonials .testimonial-item p::after {
-  content: "";
+  content: " ";
   width: 0;
   height: 0;
   border-top: 20px solid #fff;

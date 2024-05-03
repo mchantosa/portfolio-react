@@ -1,4 +1,4 @@
-import { poppins } from "./fonts";
+import { poppins } from "./utils/fonts";
 
 function SocialMediaLink(props: { href: string; icon: string }) {
   const socialAnchorTailwind = [

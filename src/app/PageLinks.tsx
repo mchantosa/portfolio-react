@@ -50,6 +50,7 @@ function PageLink(props: {
         if (hasMobileToggle) {
           setOpenMenu(false);
         }
+        document.body.style.overflow = "auto";
       }}
     >
       <a

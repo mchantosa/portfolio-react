@@ -1,8 +1,8 @@
+import Section from "./Section";
 export default function Resume() {
   return (
-    <>
-      <h1>Resume</h1>
-      <section id="resume" className="resume">
+    <Section id="resume" title="Resume" theme="gray">
+      <section className="resume">
         <div className="container">
           <div className="section-title">
             <h2>Resume</h2>
@@ -231,6 +231,6 @@ export default function Resume() {
           </div>
         </div>
       </section>
-    </>
+    </Section>
   );
 }

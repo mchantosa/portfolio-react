@@ -1,6 +1,6 @@
 "use client";
-import { raleway } from "./fonts";
-import { poppins } from "./fonts";
+import { raleway } from "./utils/fonts";
+import { poppins } from "./utils/fonts";
 import { TypeAnimation } from "react-type-animation";
 import { useEffect, useState } from "react";
 import { useMounted } from "./utils/hooks";
@@ -130,6 +130,7 @@ export default function Hero() {
   return (
     <>
       <section id="hero" className={heroTailwind} style={heroStyle}>
+        {/* <Section id="hero" title="" theme="hero"> */}
         {/* Pseudo-element for background overlay */}
         <div style={overlayStyle}></div>
         <div
@@ -141,6 +142,7 @@ export default function Hero() {
           </h1>
           <HeroTypeAnimation />
         </div>
+        {/* </Section> */}
       </section>
     </>
   );
