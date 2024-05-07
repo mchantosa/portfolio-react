@@ -3,7 +3,11 @@ import { Carousel } from "@material-tailwind/react";
 import type { CarouselProps } from "@material-tailwind/react";
 import Section from "./Section";
 import Row from "./Row";
-import { paragraphTailwind, anchorTailwind } from "./styles/style";
+import {
+  paragraphTailwind,
+  anchorTailwind,
+  headersTailwind,
+} from "./styles/style";
 
 function AboutMeCarousel() {
   const carouselProps: CarouselProps = {
@@ -49,7 +53,11 @@ function AboutMeCarousel() {
   );
 }
 function AboutMeDetailed() {
-  const h3Tailwind = ["font-bold", "text-2xl", "text-headerBlue", "pb-4"];
+  const h3Tailwind = [
+    ...headersTailwind.header3Tailwind,
+    "text-headerBlue",
+    "pb-4",
+  ];
   const pTailwind = [...paragraphTailwind, "italic", "pb-4"];
   const ulTailwind = ["list-none", "p-0"];
   const liTailwind = ["pb-4", "flex", "items-center"];
@@ -72,7 +80,7 @@ function AboutMeDetailed() {
         I enjoy hiking, reading, pushups, cuddling my naked cat, fire pits,
         coffee, tea, good food, Star Trek, SciFi, Scrabble, and puzzles.
       </p>
-      <Row scale="small">
+      <Row scale="small" additionalClassName="pb-4">
         <div className="w-full sm:w-6/12">
           <ul className={ulTailwind.join(" ")}>
             <li className={liTailwind.join(" ")}>
@@ -87,7 +95,7 @@ function AboutMeDetailed() {
               </strong>{" "}
               <span>Open to work</span>
             </li>
-            <li className={liTailwind.join(" ")}>
+            <li className={[...liTailwind, "sm:pb-0"].join(" ")}>
               <i className={liIconTailwind.join(" ")}></i>{" "}
               <strong className={liStrongTailwind.join(" ")}>Freelance:</strong>{" "}
               <span>Available</span>
@@ -106,7 +114,7 @@ function AboutMeDetailed() {
               <strong className={liStrongTailwind.join(" ")}>Phone:</strong>{" "}
               <span>336-978-4359</span>
             </li>
-            <li className={liTailwind.join(" ")}>
+            <li className={liTailwind.join(" ")} style={{ paddingBottom: 0 }}>
               <i className={liIconTailwind.join(" ")}></i>{" "}
               <strong className={liStrongTailwind.join(" ")}>City:</strong>{" "}
               <span>Seattle, WA</span>
@@ -133,8 +141,8 @@ function AboutMeDetailed() {
 export default function About() {
   const pTailwind = paragraphTailwind;
   return (
-    <Section id="about" title="About" theme="white">
-      <Row scale="large">
+    <Section id="about" title="About" theme="white" additionalClassName="">
+      <Row scale="large" additionalClassName="pb-4">
         <p className={pTailwind.join(" ")}>
           I am a software engineer, veteran, and mathematician. My passion lies
           in problem-solving, games, and puzzles. I spent several years doing
@@ -147,7 +155,7 @@ export default function About() {
         </p>
       </Row>
       <Row scale="large">
-        <div className="lg:w-5/12 w-full max-w-2xl pb-4">
+        <div className="lg:w-5/12 w-full max-w-2xl pb-4 lg:pb-0">
           <AboutMeCarousel />
         </div>
         <div className="w-full lg:w-7/12">

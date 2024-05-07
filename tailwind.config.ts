@@ -31,14 +31,12 @@ module.exports = withMT({
         anchorBlue: "#149ddd",
         anchorBlueHover: "#37b3ed",
         headerBlue: "#173b6c",
+        headerGray: "#050d18",
         backgroundGray: "f5f8fd",
+        backgroundLightBlue: "#e4edf9",
         paragraphText: "#272829",
+        borderBlue: "#1f5297",
       },
-      // variants: {
-      //   extend: {
-      //     textDecoration: ["hover"], // Enable hover variant for text decoration
-      //   },
-      // },
     },
   },
   plugins: [],

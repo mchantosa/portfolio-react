@@ -1,18 +1,12 @@
-// const sectionTailwind = ["p-8", "md:p-16", "overflow-hidden", "lg:ml-72"];
 // widths: sm: 640, md: 768, lg: 1024, xl: 1280, 2xl: 1536
 // max-w:  sm: 700, md: 900, lg: 1100, xl: max-w-1240
+import { raleway } from "../utils/fonts";
+import { poppins } from "../utils/fonts";
 
 const sectionTailwind = ["flex", "flex-col", "items-center", "overflow-hidden"];
 const sectionWhiteTailwind = [...sectionTailwind, "bg-white"];
 const sectionGrayTailwind = [...sectionTailwind, "bg-backgroundGray"];
-const sectionContainerTailwind = [
-  "p-8",
-  // "sm:max-w-xl",
-  // "md:max-w-2xl",
-  // "lg:max-w-3xl",
-  // "xl:max-w-4xl",
-  // "px-4",
-];
+const sectionContainerTailwind = ["px-4", "pt-12", "md:px-8"];
 const sectionTitleTailwind = [
   "text-4xl",
   "font-bold",
@@ -56,6 +50,31 @@ const sectionGrayTailwindGroup: {
   sectionTitleAfterTailwind: sectionTitleAfterTailwind,
 };
 
+const headersTailwind = {
+  header1Tailwind: [`${raleway.className}`],
+  header2Tailwind: [`${raleway.className}`],
+  header3Tailwind: [`${raleway.className}`, "text-2xl", "font-bold"],
+  header4Tailwind: [
+    `${raleway.className}`,
+    "text-lg",
+    "font-semibold",
+    "uppercase",
+  ],
+  header5Tailwind: [
+    `${raleway.className}`,
+    "text-base",
+    "bg-backgroundLightBlue",
+    "inline-block",
+    "font-bold",
+  ],
+  header6Tailwind: [
+    `${raleway.className}`,
+    "text-md",
+    "font-semibold",
+    "uppercase",
+  ],
+};
+
 const paragraphTailwind = ["text-paragraphText", "text-md"];
 
 const anchorTailwind = [
@@ -66,9 +85,15 @@ const anchorTailwind = [
   "hover:decoration-anchorBlueHover",
 ];
 
+const unorderedListTailwind = ["pl-6", "list-disc", "list-outside"];
+const listItemTailwind = ["pb-2"];
+
 export {
   sectionWhiteTailwindGroup,
   sectionGrayTailwindGroup,
+  headersTailwind,
   paragraphTailwind,
   anchorTailwind,
+  unorderedListTailwind,
+  listItemTailwind,
 };
