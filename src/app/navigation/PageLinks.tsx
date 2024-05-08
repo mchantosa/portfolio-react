@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useGlobalState } from "./contexts/GlobalStateContexts";
+import { useGlobalState } from "../utils/GlobalStateContexts";
 
 function PageLink(props: {
   active: string;
@@ -103,6 +103,15 @@ export default function PageLinks() {
             href="#about"
             text="About"
             boxicon="bx bx-user bx-sm"
+          />
+        </li>
+        <li className={liTailwind.join(" ")}>
+          <PageLink
+            active={active}
+            setActive={setActive}
+            href="#skills"
+            text="Skills"
+            boxicon="bx bx-file-blank bx-sm"
           />
         </li>
         <li className={liTailwind.join(" ")}>

@@ -2,8 +2,8 @@ import {
   sectionWhiteTailwindGroup,
   sectionGrayTailwindGroup,
   headersTailwind,
-} from "./styles/style";
-import { useGlobalState } from "./contexts/GlobalStateContexts";
+} from "../styles/style";
+import { useGlobalState } from "./GlobalStateContexts";
 
 export default function Section(props: {
   id: string;
@@ -21,6 +21,7 @@ export default function Section(props: {
     sectionTitleTailwind,
     sectionTitleAfterTailwind,
   } = theme === "white" ? sectionWhiteTailwindGroup : sectionGrayTailwindGroup;
+
   if (openMenu) {
     sectionTailwind = [...sectionTailwind, "transition", "ml-72"];
   }

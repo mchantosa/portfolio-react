@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { open_sans } from "./utils/fonts";
+import { open_sans } from "./styles/fonts";
 import "./styles/globals.css";
 import "./styles/style.css";
 import "boxicons/css/boxicons.min.css";

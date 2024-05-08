@@ -1,15 +1,13 @@
 "use client";
-
-import Navigation from "./Navigation";
-import ScrollToTop from "./Navigation";
-import Hero from "./Hero";
-import About from "./About";
-import Skills from "./Skills";
-import Resume from "./Resume";
-import Portfolio from "./Portfolio";
-import Contact from "./Contact";
-import Footer from "./Footer";
-import { GlobalStateProvider } from "./contexts/GlobalStateContexts";
+import { GlobalStateProvider } from "./utils/GlobalStateContexts";
+import Navigation from "./navigation/Navigation";
+import ScrollToTop from "./navigation/Navigation";
+import Hero from "./hero/Hero";
+import About from "./about/About";
+import Resume from "./resume/Resume";
+import Portfolio from "./portfolio/Portfolio";
+import Contact from "./contact/Contact";
+import Footer from "./navigation/Footer";
 
 export default function Home() {
   const mainTailwind = ["bg-white", "text-paragraphText"];

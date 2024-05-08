@@ -1,9 +1,9 @@
 "use client";
-import { raleway } from "./utils/fonts";
-import { poppins } from "./utils/fonts";
+import { raleway } from "../styles/fonts";
+import { poppins } from "../styles/fonts";
 import { TypeAnimation } from "react-type-animation";
 import { useEffect, useState } from "react";
-import { useMounted } from "./utils/hooks";
+import { useMounted } from "../utils/hooks";
 
 /* 
   - Uses inline styles

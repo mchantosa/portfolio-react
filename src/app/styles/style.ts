@@ -1,12 +1,12 @@
 // widths: sm: 640, md: 768, lg: 1024, xl: 1280, 2xl: 1536
 // max-w:  sm: 700, md: 900, lg: 1100, xl: max-w-1240
-import { raleway } from "../utils/fonts";
-import { poppins } from "../utils/fonts";
+import { raleway } from "./fonts";
+import { poppins } from "./fonts";
 
 const sectionTailwind = ["flex", "flex-col", "items-center", "overflow-hidden"];
 const sectionWhiteTailwind = [...sectionTailwind, "bg-white"];
 const sectionGrayTailwind = [...sectionTailwind, "bg-backgroundGray"];
-const sectionContainerTailwind = ["px-4", "pt-12", "md:px-8"];
+const sectionContainerTailwind = ["px-4", "py-14", "md:px-8"];
 const sectionTitleTailwind = [
   "text-4xl",
   "font-bold",

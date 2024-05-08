@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import SocialMediaLinks from "./SocialMediaLinks";
 import PageLinks from "./PageLinks";
 import { Drawer } from "@material-tailwind/react";
-import { useGlobalState } from "./contexts/GlobalStateContexts";
+import { useGlobalState } from "../utils/GlobalStateContexts";
 
 function Menu() {
   const { openMenu } = useGlobalState();
