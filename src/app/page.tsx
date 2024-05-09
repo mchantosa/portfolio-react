@@ -1,7 +1,7 @@
 "use client";
 import { GlobalStateProvider } from "./utils/GlobalStateContexts";
 import Navigation from "./navigation/Navigation";
-import ScrollToTop from "./navigation/Navigation";
+import ScrollToTop from "./navigation/ScrollToTop";
 import Hero from "./hero/Hero";
 import About from "./about/About";
 import Resume from "./resume/Resume";

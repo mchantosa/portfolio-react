@@ -1,4 +1,4 @@
-import { anchorTailwind, headersTailwind } from "../styles/style";
+import { anchorTailwind } from "../styles/style";
 
 const aTailwind = anchorTailwind;
 

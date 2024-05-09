@@ -25,7 +25,7 @@ module.exports = withMT({
         },
       },
       colors: {
-        darkGrayBlackBlue: "#040b14", // Define your specific color here
+        darkGrayBlackBlue: "#040b14",
         darkGray: "#2c2f3f",
         medDarkGray: "#212431",
         anchorBlue: "#149ddd",
@@ -34,6 +34,7 @@ module.exports = withMT({
         headerGray: "#050d18",
         backgroundGray: "#f5f8fd",
         backgroundLightBlue: "#e4edf9",
+        backgroundLightBlue2: "#dff3fc",
         backgroundGray2: "#f9f9f9",
         paragraphText: "#272829",
         borderBlue: "#1f5297",
