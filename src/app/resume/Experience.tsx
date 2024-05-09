@@ -1,6 +1,6 @@
 import SubSection from "./Subsection";
 import ExperienceItem from "./ExperienceItem";
-import { aTailwind, ulTailwind, liTailwind } from "../resume/resumeStyles";
+import { aTailwind, ulTailwind, liTailwind } from "./style";
 
 export default function Experience() {
   return (

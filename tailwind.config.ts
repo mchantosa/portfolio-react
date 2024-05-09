@@ -37,6 +37,15 @@ module.exports = withMT({
         backgroundGray2: "#f9f9f9",
         paragraphText: "#272829",
         borderBlue: "#1f5297",
+        borderGray: "#eee",
+        shade: "rgba(5, 13, 24, 0.08)",
+      },
+      dropShadow: {
+        "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
+        "4xl": [
+          "0 35px 35px rgba(0, 0, 0, 0.25)",
+          "0 45px 65px rgba(0, 0, 0, 0.15)",
+        ],
       },
     },
   },

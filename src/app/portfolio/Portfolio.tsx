@@ -26,8 +26,6 @@ export default function Portfolio() {
         </div>
       </Row>
       <Row scale="large">
-        {" "}
-        {/**portfolio-container*/}
         <div className="w-4/12">
           <PortfolioItem
             imageName="innercircle/logo.png"

@@ -6,7 +6,7 @@ export default function Header(props: {
   crumbs: { title: string; link: string }[];
 }) {
   const { title, crumbs } = props;
-  const headerTailwind = ["py-6", "bg-backgroundGray2"];
+  const headerTailwind = ["py-6", "bg-backgroundGray"];
   const h2Tailwind = [
     ...headersTailwind.header2Tailwind,
     "text-2xl",

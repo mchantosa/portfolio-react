@@ -1,4 +1,4 @@
-import { h3Tailwind } from "../resume/resumeStyles";
+import { h3Tailwind } from "./style";
 export default function SubSection(props: {
   id?: string;
   title: string;

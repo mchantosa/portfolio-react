@@ -6,7 +6,7 @@ import Education from "./Education";
 import Military from "./Military";
 import Skills from "./Skills";
 import Experience from "./Experience";
-import { pTailwind, aTailwind } from "../resume/resumeStyles";
+import { pTailwind, aTailwind } from "./style";
 
 export default function Resume() {
   return (

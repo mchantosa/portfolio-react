@@ -1,5 +1,5 @@
 import ResumeItem from "./ResumeItem";
-import { h4Tailwind, h5Tailwind, pTailwind } from "../resume/resumeStyles";
+import { h4Tailwind, h5Tailwind, pTailwind } from "./style";
 export default function ExperienceItem(props: {
   jobTitle: string;
   fromTo: string;

@@ -1,11 +1,6 @@
 import SubSection from "./Subsection";
 import ResumeItem from "./ResumeItem";
-import {
-  h4Tailwind,
-  pTailwind,
-  ulTailwind,
-  liTailwind,
-} from "../resume/resumeStyles";
+import { h4Tailwind, pTailwind, ulTailwind, liTailwind } from "./style";
 
 export default function Summary() {
   return (
