@@ -12,17 +12,12 @@ import Footer from "./navigation/Footer";
 export default function Home() {
   const mainTailwind = ["bg-white", "text-paragraphText"];
   return (
-    <GlobalStateProvider>
-      <main className={mainTailwind.join(" ")}>
-        <Navigation />
-        <Hero />
-        <About />
-        <Resume />
-        <Portfolio />
-        <Contact />
-        <Footer />
-        <ScrollToTop />
-      </main>
-    </GlobalStateProvider>
+    <main className={mainTailwind.join(" ")}>
+      <Hero />
+      <About />
+      <Resume />
+      <Portfolio />
+      <Contact />
+    </main>
   );
 }

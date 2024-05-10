@@ -13,8 +13,8 @@ function PageLink(props: {
   const aTailwind = [
     "focus: flex",
     "items-center",
-    "p-3",
-    "mb-2",
+    "p-2.5",
+    // "mb-8",
     "text-sm",
     "transition",
     "duration-300",
@@ -91,7 +91,7 @@ export default function PageLinks() {
           <PageLink
             active={active}
             setActive={setActive}
-            href="#hero"
+            href="/#hero"
             text="Home"
             boxicon="bx bx-home bx-sm"
           />
@@ -100,7 +100,7 @@ export default function PageLinks() {
           <PageLink
             active={active}
             setActive={setActive}
-            href="#about"
+            href="/#about"
             text="About"
             boxicon="bx bx-user bx-sm"
           />
@@ -109,7 +109,7 @@ export default function PageLinks() {
           <PageLink
             active={active}
             setActive={setActive}
-            href="#skills"
+            href="/#skills"
             text="Skills"
             boxicon="bx bx-file-blank bx-sm"
           />
@@ -118,7 +118,7 @@ export default function PageLinks() {
           <PageLink
             active={active}
             setActive={setActive}
-            href="#resume"
+            href="/#resume"
             text="Resume"
             boxicon="bx bx-file-blank bx-sm"
           />
@@ -127,7 +127,7 @@ export default function PageLinks() {
           <PageLink
             active={active}
             setActive={setActive}
-            href="#portfolio"
+            href="/#portfolio"
             text="Portfolio"
             boxicon="bx bx-book-content bx-sm"
           />
@@ -137,7 +137,7 @@ export default function PageLinks() {
           <PageLink
             active={active}
             setActive={setActive}
-            href="#contact"
+            href="/#contact"
             text="Contact"
             boxicon="bx bx-envelope bx-sm"
           />

@@ -4,9 +4,11 @@ import SocialMediaLinks from "./SocialMediaLinks";
 import PageLinks from "./PageLinks";
 import { Drawer } from "@material-tailwind/react";
 import { useGlobalState } from "../utils/GlobalStateContexts";
+import { FooterNav } from "./Footer";
 
 function Menu() {
   const { openMenu } = useGlobalState();
+
   const menuTailwind = [
     "fixed",
     "top-0",
@@ -16,6 +18,7 @@ function Menu() {
     "p-4",
     "bg-darkGrayBlackBlue",
     "overflow-y-auto",
+    "z-40",
   ];
 
   return (
@@ -32,6 +35,7 @@ function Menu() {
         <SocialMediaLinks />
         <PageLinks />
       </div>
+      <FooterNav />
     </Drawer>
   );
 }
@@ -56,7 +60,7 @@ function Hamburger() {
   return (
     <>
       {hasMobileToggle && (
-        <div className={hamburgerTailwind.join(" ")} style={{ zIndex: 9999 }}>
+        <div className={hamburgerTailwind.join(" ")} style={{ zIndex: 50 }}>
           <i
             onClick={() => {
               setOpenMenu(true);
@@ -67,7 +71,7 @@ function Hamburger() {
         </div>
       )}
       {openMenu && (
-        <div className={hamburgerTailwind.join(" ")} style={{ zIndex: 9999 }}>
+        <div className={hamburgerTailwind.join(" ")} style={{ zIndex: 50 }}>
           <i
             onClick={() => {
               setOpenMenu(false);
@@ -86,7 +90,7 @@ export default function Navigation() {
     useGlobalState();
 
   const handleResize = () => {
-    if (window.innerWidth > 1240) {
+    if (window.innerWidth > 1140) {
       setHasMobileToggle(false);
       setOpenMenu(true);
     } else {

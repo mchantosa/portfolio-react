@@ -1,65 +1,10 @@
 "use client";
 import { raleway } from "../styles/fonts";
-import { poppins } from "../styles/fonts";
-import { TypeAnimation } from "react-type-animation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMounted } from "../utils/hooks";
-
-/* 
-  - Uses inline styles
-  - Media query wrapped in event handler 
-  - Triggered with state change on window resize
-  - Window not defined error controlled with mount state
-*/
-
-const HeroTypeAnimation = () => {
-  const mounted = useMounted();
-  // Define styles
-  const pStyle = {
-    color: "#fff",
-    marginBottom: "50px",
-    fontSize: "26px",
-  };
-  const typeAnimationStyle = {
-    display: "inline-block",
-    color: "white",
-    textDecoration: "underline",
-    textDecorationColor: "#149ddd",
-    textUnderlineOffset: "10px",
-    textDecorationThickness: "3px",
-    letterSpacing: "1px",
-  };
-
-  if (mounted && window.innerWidth <= 500) {
-    pStyle.fontSize = "20px";
-  }
-
-  return (
-    <div className={poppins.className}>
-      <p style={pStyle}>
-        <span>I'm a </span>
-        <TypeAnimation
-          sequence={[
-            "software engineer",
-            1000, //delay
-            "fullstack developer",
-            1000,
-            "web developer",
-            1000,
-            "mathematician",
-            1000,
-            "mushroom enthusiast",
-            1000,
-          ]}
-          wrapper="span"
-          speed={15}
-          style={typeAnimationStyle}
-          repeat={Infinity}
-        />
-      </p>
-    </div>
-  );
-};
+import { isElementVisible } from "../utils/helpers";
+import Section from "../utils/Section";
+import HeroTypeAnimation from "./HeroTypeAnimation";
 
 export default function Hero() {
   // Define styles
@@ -74,7 +19,7 @@ export default function Hero() {
     right: 0,
     zIndex: 1,
   };
-  const heroStyle: React.CSSProperties & { backgroundAttachment?: string } = {
+  const heroStyle: React.CSSProperties = {
     width: "100%",
     height: "100vh",
     background: "url(/img/hero-bg.jpg) top center",
@@ -113,25 +58,39 @@ export default function Hero() {
     }
   }
 
+  const hero = useRef(null);
+
   useEffect(() => {
     const handleResize = () => {
+      console.log("watch me resize");
       setSize(window.innerWidth);
+    };
+
+    const handleScroll = () => {
+      console.log("watch me scroll");
+      const isHeroVisible = isElementVisible(hero.current);
+      console.log("hero: ", isHeroVisible);
     };
 
     // Listen for resize events
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup function
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []); // Empty dependency array ensures this effect runs only once after mount
 
   return (
     <>
-      <section id="hero" className={heroTailwind} style={heroStyle}>
-        {/* <Section id="hero" title="" theme="hero"> */}
-        {/* Pseudo-element for background overlay */}
+      <Section
+        id="hero"
+        theme="hero"
+        additionalClassName={heroTailwind}
+        additionalStyle={heroStyle}
+      >
         <div style={overlayStyle}></div>
         <div
           className="hero-container animate-fade-in"
@@ -142,8 +101,7 @@ export default function Hero() {
           </h1>
           <HeroTypeAnimation />
         </div>
-        {/* </Section> */}
-      </section>
+      </Section>
     </>
   );
 }

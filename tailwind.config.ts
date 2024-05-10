@@ -40,6 +40,7 @@ module.exports = withMT({
         borderBlue: "#1f5297",
         borderGray: "#eee",
         shade: "rgba(5, 13, 24, 0.08)",
+        creditColor: "##eaebf0",
       },
       dropShadow: {
         "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
