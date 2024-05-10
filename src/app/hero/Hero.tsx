@@ -92,10 +92,7 @@ export default function Hero() {
         additionalStyle={heroStyle}
       >
         <div style={overlayStyle}></div>
-        <div
-          className="hero-container animate-fade-in"
-          style={heroContainerStyle}
-        >
+        <div className="animate-fade-in" style={heroContainerStyle}>
           <h1 className={raleway.className} style={h1Style}>
             Megan Chantosa
           </h1>

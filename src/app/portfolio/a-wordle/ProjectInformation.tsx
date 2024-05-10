@@ -1,8 +1,8 @@
 import { anchorTailwind } from "@/app/styles/style";
-import portfolioTailwind from "../style";
+import { portfolioTailwindGroup } from "../style";
 
 const { containerTailwind, h3Tailwind, ulTailwind, liTailwind } =
-  portfolioTailwind.projectInfoTailwind;
+  portfolioTailwindGroup.projectInfoTailwind;
 
 const aTailwind = anchorTailwind;
 export default function ProjectInformation() {

@@ -8,7 +8,6 @@ const projectCarouselTheme = {
         carousel: {
           display: "flex items-center",
         },
-
         slide: {
           height: "h-8/12",
           padding: "p-8",
@@ -24,11 +23,11 @@ const carouselProps: CarouselProps = {
   children: undefined,
   loop: true,
   navigation: ({ setActiveIndex, activeIndex, length }) => (
-    <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+    <div className="absolute bottom-4 left-2/4 z-10 flex -translate-x-2/4 gap-2">
       {new Array(length).fill("").map((_, i) => (
         <span
           key={i}
-          className={`block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] ${
+          className={`block h-3 w-3 cursor-pointer rounded-full transition-colors animate-fade-in-fast content-[''] ${
             activeIndex === i
               ? "bg-anchorBlue"
               : "bg-white border border-anchorBlue"
@@ -39,7 +38,7 @@ const carouselProps: CarouselProps = {
     </div>
   ),
 };
-export default function ProjectInformation(props: { children: any }) {
+export default function ProjectCarousel(props: { children: any }) {
   const { children } = props;
   return (
     <ThemeProvider value={projectCarouselTheme}>

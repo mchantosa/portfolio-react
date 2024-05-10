@@ -1,6 +1,6 @@
-import portfolioTailwind from "../style";
+import { portfolioTailwindGroup } from "../style";
 const { containerTailwind, h2Tailwind, pTailwind } =
-  portfolioTailwind.projectDescriptionTailwind;
+  portfolioTailwindGroup.projectDescriptionTailwind;
 export default function ProjectDetails() {
   return (
     <div className={containerTailwind.join(" ")}>

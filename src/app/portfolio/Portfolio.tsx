@@ -5,12 +5,7 @@ import FilterMenu from "./FilterMenu";
 
 export default function Portfolio() {
   return (
-    <Section
-      id="portfolio"
-      title="Portfolio"
-      theme="white"
-      additionalClassName=""
-    >
+    <Section id="portfolio" title="Portfolio" theme="white">
       <p>
         I have created a web application called InnerCircle and a Wordle
         inspired game, as well as this website to showcase my skill set.

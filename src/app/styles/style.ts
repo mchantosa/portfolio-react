@@ -27,9 +27,7 @@ const headersTailwind = {
     "uppercase",
   ],
 };
-
 const paragraphTailwind = ["text-paragraphText", "text-md"];
-
 const anchorTailwind = [
   "text-anchorBlue",
   "no-underline",
@@ -37,7 +35,6 @@ const anchorTailwind = [
   "hover:underline",
   "hover:decoration-anchorBlueHover",
 ];
-
 const unorderedListTailwind = ["pl-6", "list-disc", "list-outside"];
 const listItemTailwind = ["pb-2"];
 

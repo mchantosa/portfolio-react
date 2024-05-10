@@ -8,9 +8,7 @@ const ulTailwind = [
   "uppercase",
   "text-paragraphText",
   "mb-5",
-  "transition",
-  "duration-300",
-  "ease-in-out",
+  "animate-fade-in-fast",
 ];
 const liTailwind = [
   "cursor-pointer",
@@ -22,9 +20,7 @@ const liTailwind = [
   "uppercase",
   "text-paragraphText",
   "mb-5",
-  "transition",
-  "duration-300",
-  "ease-in-out",
+  "animate-fade-in-fast",
   "hover:text-anchorBlue",
 ];
 

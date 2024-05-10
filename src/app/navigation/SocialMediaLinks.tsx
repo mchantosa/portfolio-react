@@ -1,4 +1,5 @@
 import { poppins } from "../styles/fonts";
+import { ProfilePic } from "../utils/GetImage";
 
 function SocialMediaLink(props: { href: string; icon: string }) {
   const socialAnchorTailwind = [
@@ -14,8 +15,7 @@ function SocialMediaLink(props: { href: string; icon: string }) {
     "text-center",
     "w-9",
     "h-9",
-    "transition",
-    "duration-300",
+    "animate-fade-in-fast",
     "hover:bg-anchorBlue",
     "hover:text-white",
     "hover:no-underline",
@@ -42,7 +42,7 @@ export default function SocialMediaLinks() {
   const imageTailwind = [
     "mx-auto",
     "block",
-    "w-36",
+    // "w-36",
     "border-8",
     "border-solid",
     "border-gray-900",
@@ -61,11 +61,7 @@ export default function SocialMediaLinks() {
   return (
     <div className="profile">
       <a href="#hero" className={profileAnchorTailwind.join(" ")}>
-        <img
-          src="img/profile-img.jpg"
-          alt=""
-          className={imageTailwind.join(" ")}
-        />
+        <ProfilePic additionalClassName={imageTailwind.join(" ")} />
         <h1 className={h1Tailwind.join(" ")}>Megan Chantosa</h1>
       </a>
       <div className={socialLinksTailwind.join(" ")}>

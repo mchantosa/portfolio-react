@@ -22,10 +22,10 @@ export default function About() {
         </p>
       </Row>
       <Row scale="large">
-        <div className="lg:w-5/12 w-full max-w-2xl pb-4 lg:pb-0">
+        <div className="lg:w-5/12 w-full max-w-2xl pb-4 lg:pb-0 animate-fade-in-fast">
           <AboutCarousel />
         </div>
-        <div className="w-full lg:w-7/12">
+        <div className="w-full lg:w-7/12 animate-slide-in-right">
           <AboutDetailed />
         </div>
       </Row>

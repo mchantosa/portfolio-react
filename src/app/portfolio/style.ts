@@ -1,6 +1,6 @@
 import { headersTailwind } from "@/app/styles/style";
 const { header2Tailwind, header3Tailwind } = headersTailwind;
-const portfolioTailwind = {
+const portfolioTailwindGroup = {
   projectInfoTailwind: {
     containerTailwind: ["p-7", "bg-backgroundLightGray", "shadow-2xl"],
     h3Tailwind: [
@@ -20,4 +20,9 @@ const portfolioTailwind = {
   },
 };
 
-export default portfolioTailwind;
+const portfolioDetailsTailwindGroup = {
+  pageTailwind: ["bg-white"],
+  containerTailwind: ["px-8", "md:px-16"],
+};
+
+export { portfolioDetailsTailwindGroup, portfolioTailwindGroup };

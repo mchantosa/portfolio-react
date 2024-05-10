@@ -10,8 +10,7 @@ const aTailwind = [
   "h-8",
   "rounded-full",
   "hover:bg-anchorBlueHover",
-  "transition",
-  "duration-400",
+  "animate-fade-in-fast",
 ];
 const aInvisibleTailwind = ["invisible", "opacity-0"];
 const aVisibleTailwind = ["visible", "opacity-100"];

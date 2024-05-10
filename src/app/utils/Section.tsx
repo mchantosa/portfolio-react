@@ -21,7 +21,7 @@ export default function Section(props: {
   } = theme === "white" ? sectionWhiteTailwindGroup : sectionGrayTailwindGroup;
 
   if (openMenu) {
-    sectionTailwind = [...sectionTailwind, "transition"]; //"ml-72"
+    sectionTailwind = [...sectionTailwind]; //"ml-72"
   }
   return (
     <section

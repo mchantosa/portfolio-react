@@ -14,9 +14,7 @@ const iWrapperTailwind = [
   "bg-backgroundLightBlue2",
   "text-xl",
   "rounded-full",
-  "transition",
-  "duration-300",
-  "ease-in-out",
+  "animate-fade-in-fast",
 ];
 
 const h4Tailwind = [

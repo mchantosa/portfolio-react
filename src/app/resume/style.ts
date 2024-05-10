@@ -44,4 +44,4 @@ export {
   h4Tailwind,
   h5Tailwind,
   h6Tailwind,
-}
+};

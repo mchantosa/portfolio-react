@@ -16,22 +16,14 @@ function PageLink(props: {
     "p-2.5",
     // "mb-8",
     "text-sm",
-    "transition",
-    "duration-300",
-    "ease-in-out",
+    "animate-fade-in-fast",
   ];
 
   const aHoverTailwind = ["text-white", "no-underline"].map(
     (el) => "hover:" + el
   );
 
-  const iTailwind = [
-    "text-3xl",
-    "pr-2",
-    "transition",
-    "duration-300",
-    "ease-in-out",
-  ];
+  const iTailwind = ["text-3xl", "pr-2", "animate-fade-in-fast"];
 
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {

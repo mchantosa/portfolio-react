@@ -5,8 +5,7 @@ export default function PortfolioItem(props: {
 }) {
   const imgTailwind = ["w-full", "h-auto"];
   const wrapTailwind = [
-    "transition",
-    "duration-300",
+    "animate-slide-in-right",
     "relative",
     "overflow-hidden",
     "z-10",
