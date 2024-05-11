@@ -91,6 +91,7 @@ const projectDescription = () => {
   ];
   return <ProjectDescription content={content} />;
 };
+
 export default function Page() {
   return (
     <ProjectPageTemplate

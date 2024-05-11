@@ -1,8 +1,9 @@
 import React, { ReactNode } from "react";
 import Section from "@/app/utils/Section";
 import Row from "@/app/utils/Row";
-import { portfolioDetailsTailwindGroup } from "./style";
-const { pageTailwind, containerTailwind } = portfolioDetailsTailwindGroup;
+
+const pageTailwind = ["bg-white"];
+const containerTailwind = [];
 
 export default function Page(props: {
   projectCarousel: React.ReactNode;
@@ -18,13 +19,16 @@ export default function Page(props: {
       theme="gray"
       additionalClassName={pageTailwind.join(" ")}
     >
-      <div className={containerTailwind.join(" ")}>
+      <div /*className={containerTailwind.join(" ")}*/>
         <div>
-          <Row scale="large" additionalClassName="items-center justify-start">
-            <div className="w-full lg:w-4/12 animate-fade-in-fast">
+          <Row
+            scale="large"
+            additionalClassName="items-center justify-center lg:justify-start pb-14 gap-8"
+          >
+            <div className="w-full max-w-2xl lg:w-5/12 animate-fade-in-fast">
               {projectCarousel}
             </div>
-            <div className="w-full lg:w-6/12 animate-slide-in-right">
+            <div className="w-full max-w-2xl lg:w-5/12 animate-slide-in-right">
               {projectInformation}
               {children}
             </div>

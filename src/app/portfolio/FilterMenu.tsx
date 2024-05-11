@@ -1,42 +1,57 @@
 const ulTailwind = [
-  "cursor-pointer",
-  "inline-block",
-  "px-15",
-  "py-8",
+  "flex",
+  "align-center",
+  "justify-center",
+  "flex-wrap",
+  "gap-8",
+  "px-8",
+  "py-2",
+  "my-8",
+  "bg-backgroundGray",
+  "rounded-full",
   "text-base",
   "font-semibold",
   "uppercase",
-  "text-paragraphText",
-  "mb-5",
   "animate-fade-in-fast",
+  "shadow-md",
 ];
 const liTailwind = [
   "cursor-pointer",
-  "inline-block",
-  "px-4",
-  "py-2",
   "text-base",
   "font-semibold",
   "uppercase",
-  "text-paragraphText",
-  "mb-5",
-  "animate-fade-in-fast",
   "hover:text-anchorBlue",
+  "animate-fade-in-fast",
+];
+const liActiveTailwind = ["text-anchorBlue"];
+const liInactiveTailwind = ["text-paragraphGray"];
+
+const activeFilters = [
+  { filter: "*", title: "All" },
+  { filter: "react", title: "React" },
+  { filter: "htmlcssjavascript", title: "HTML/CSS/JavaScript" },
 ];
 
-export default function FilterMenu() {
+export default function FilterMenu(props: {
+  activeFilter: string;
+  setActiveFilter: (activeFilter: string) => void;
+}) {
+  const { activeFilter, setActiveFilter } = props;
   return (
     <ul className={ulTailwind.join(" ")}>
-      <li data-filter="*" className={[...liTailwind].join(" ")}>
-        All
-      </li>
-      <li data-filter=".filter-dynamic" className={[...liTailwind].join(" ")}>
-        React
-      </li>
-
-      <li data-filter=".filter-webapp" className={[...liTailwind].join(" ")}>
-        HTML/CSS/JavaScript
-      </li>
+      {activeFilters.map((filter) => (
+        <li
+          onClick={() => setActiveFilter(filter.filter)}
+          className={[
+            ...liTailwind,
+            activeFilter === filter.filter
+              ? liActiveTailwind.join(" ")
+              : liInactiveTailwind.join(" "),
+          ].join(" ")}
+        >
+          {filter.title}
+        </li>
+      ))}
     </ul>
   );
 }

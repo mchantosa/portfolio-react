@@ -1,71 +1,68 @@
+import { truncate } from "fs";
+import React from "react";
+
 export default function PortfolioItem(props: {
   imageName: string;
   link: string;
   title: string;
 }) {
-  const imgTailwind = ["w-full", "h-auto"];
   const wrapTailwind = [
-    "animate-slide-in-right",
+    "flex",
+    "flex-col",
     "relative",
+    "animate-slide-in-right",
     "overflow-hidden",
-    "z-10",
   ];
-  const wrapBeforeTailwind = [
-    "before:absolute",
-    "before:inset-0",
-    "before:bg-backgroundGray",
-    "before:bg-opacity-50",
-    "before:transition-opacity",
-    "before:duration-300",
-    "before:z-20",
-    "before:opacity-0",
-  ];
+
+  const imgTailwind = ["w-full", "h-auto", "relative", "z-10"];
+
   const linksTailwind = [
-    "opacity-100",
-    "left-0",
-    "right-0",
-    // "bottom-[-60px]",
-    "z-30",
-    "absolute",
-    "transition-all",
-    "duration-300",
     "flex",
     "justify-center",
+    "z-30",
+    "animate-slide-in-bottom",
+    "bg-anchorBlue/75",
   ];
   const aTailwind = [
     "text-white",
     "text-4xl",
     "text-center",
-    "bg-blue-400",
-    "bg-opacity-75",
-    "transition",
-    "duration-300",
-    "w-1/2",
-    "hover:bg-opacity-95",
+    "w-6/12",
+    "hover:bg-anchorBlue",
   ];
 
   const { imageName, link, title } = props;
+  const [hovering, setHovering] = React.useState(false);
 
   return (
-    <div className={[...wrapTailwind, ...wrapBeforeTailwind].join(" ")}>
+    <div
+      onMouseEnter={() => {
+        setHovering(true);
+      }}
+      onMouseLeave={() => {
+        setHovering(false);
+      }}
+      className={[...wrapTailwind].join(" ")}
+    >
       <img
         src={"/img/portfolio/" + imageName}
         className={imgTailwind.join(" ")}
         alt=""
       />
-      <div className={[...linksTailwind].join(" ")}>
-        <a
-          href={"/img/portfolio/" + imageName}
-          data-gallery="portfolioGallery"
-          className="portfolio-lightbox"
-          title="InnerCircle logo"
-        >
-          <i className={["bx bx-plus", ...aTailwind].join(" ")}></i>
-        </a>
-        <a href={link} title={title}>
-          <i className={["bx bx-link", ...aTailwind].join(" ")}></i>
-        </a>
-      </div>
+      {hovering && (
+        <div className={[...linksTailwind, "-mt-16"].join(" ")}>
+          <a
+            href={"/img/portfolio/" + imageName}
+            className={aTailwind.join(" ")}
+            title={title + "Logo"}
+          >
+            <i className="bx bx-plus"></i>
+          </a>
+          <a href={link} className={aTailwind.join(" ")}>
+            <i className="bx bx-link"></i>
+          </a>
+        </div>
+      )}
     </div>
   );
 }

@@ -21,7 +21,7 @@ export default function Row(props: {
   if (scale === "small") {
     return (
       <div
-        className={[...rowSmallTailwind, additionalClassName, `sm:gap-2`].join(
+        className={[...rowSmallTailwind, additionalClassName, `gap-2`].join(
           " "
         )}
       >
@@ -31,7 +31,7 @@ export default function Row(props: {
   } else {
     return (
       <div
-        className={[...rowLargeTailwind, `lg:gap-8`, additionalClassName].join(
+        className={[...rowLargeTailwind, additionalClassName, `gap-4`].join(
           " "
         )}
       >

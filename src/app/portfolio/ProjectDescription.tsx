@@ -1,6 +1,17 @@
-import { portfolioTailwindGroup } from "./style";
+import { headersTailwind } from "@/app/styles/style";
+
+const projectDetailsTailwindGroup = {
+  containerTailwind: ["px-4", "md:px-8"],
+  h2Tailwind: [
+    headersTailwind.header2Tailwind,
+    "text-2xl",
+    "font-bold",
+    "text-headerGray",
+  ],
+  pTailwind: ["text-paragraphText"],
+};
 const { containerTailwind, h2Tailwind, pTailwind } =
-  portfolioTailwindGroup.projectDescriptionTailwind;
+  projectDetailsTailwindGroup;
 
 export default function ProjectDetails(props: {
   content: { heading: string; description: string }[];
