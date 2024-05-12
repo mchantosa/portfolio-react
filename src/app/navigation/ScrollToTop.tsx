@@ -12,7 +12,7 @@ const aTailwind = [
   "hover:bg-anchorBlueHover",
   "animate-fade-in-fast",
 ];
-const aInvisibleTailwind = ["invisible", "opacity-0"];
+
 const aVisibleTailwind = ["visible", "opacity-100"];
 const iTailwind = ["text-28", "text-white"];
 
@@ -21,7 +21,7 @@ export default function ScrollToTop() {
     <a
       href="#"
       className={[...aTailwind, ...aVisibleTailwind].join(" ")}
-      style={{ zIndex: 9999 }}
+      style={{ zIndex: 40 }}
     >
       <i className={[...iTailwind, "bx bx-up-arrow-alt bx-sm"].join(" ")}></i>
     </a>

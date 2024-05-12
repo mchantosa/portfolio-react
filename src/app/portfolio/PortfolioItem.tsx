@@ -1,10 +1,13 @@
 import { truncate } from "fs";
 import React from "react";
+import ProjectModal from "./ProjectModal";
 
 export default function PortfolioItem(props: {
   imageName: string;
   link: string;
   title: string;
+  projectCarousel: React.ReactNode;
+  projectInformation: React.ReactNode;
 }) {
   const wrapTailwind = [
     "flex",
@@ -31,8 +34,9 @@ export default function PortfolioItem(props: {
     "hover:bg-anchorBlue",
   ];
 
-  const { imageName, link, title } = props;
+  const { imageName, link, title, projectCarousel, projectInformation } = props;
   const [hovering, setHovering] = React.useState(false);
+  const [modal, setModal] = React.useState(false);
 
   return (
     <div
@@ -51,17 +55,26 @@ export default function PortfolioItem(props: {
       />
       {hovering && (
         <div className={[...linksTailwind, "-mt-16"].join(" ")}>
-          <a
-            href={"/img/portfolio/" + imageName}
+          <span
+            onClick={() => {
+              setModal(true);
+            }}
             className={aTailwind.join(" ")}
-            title={title + "Logo"}
           >
             <i className="bx bx-plus"></i>
-          </a>
+          </span>
           <a href={link} className={aTailwind.join(" ")}>
             <i className="bx bx-link"></i>
           </a>
         </div>
+      )}
+      {modal && (
+        <ProjectModal
+          projectCarousel={projectCarousel}
+          ProjectDescription={projectInformation}
+          setModal={setModal}
+          setHovering={setHovering}
+        />
       )}
     </div>
   );

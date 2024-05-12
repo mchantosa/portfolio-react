@@ -7,7 +7,7 @@ import ProjectPageTemplate from "../ProjectPageTemplate";
 import { anchorTailwind } from "@/app/styles/style";
 const aTailwind = anchorTailwind;
 
-const projectCarousel = () => {
+export const projectCarousel = () => {
   return (
     <ProjectCarousel>
       <img src="/img/portfolio/innercircle/logo.png" alt="" />
@@ -19,7 +19,7 @@ const projectCarousel = () => {
   );
 };
 
-const projectInformation = () => {
+export const projectInformation = () => {
   const content = [
     { heading: "Category", description: "Web Application and API" },
     { heading: "Client", description: "Independent project" },
