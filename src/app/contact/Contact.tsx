@@ -38,8 +38,9 @@ export default function Contact() {
             </div>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d172040.87733655708!2d-122.46375772407954!3d47.642871317631396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1696986732163!5m2!1sen!2sus"
-              width="400"
-              height="300"
+              //width="350"
+              //height="300"
+              className="w-full h-96 pt-5"
               loading="lazy"
             ></iframe>
           </div>
