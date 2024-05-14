@@ -5,16 +5,17 @@ import ProjectDescription from "../ProjectDescription";
 import ProjectInformation from "../ProjectInformation";
 import ProjectPageTemplate from "../ProjectPageTemplate";
 import { anchorTailwind } from "@/app/styles/style";
+import { CarouselPic } from "@/app/utils/GetImage";
 const aTailwind = anchorTailwind;
 
 export const projectCarousel = () => {
   return (
     <ProjectCarousel>
-      <img src="/img/portfolio/innercircle/logo.png" alt="" />
-      <img src="/img/portfolio/innercircle/coffee_desk.jpg" alt="" />
-      <img src="/img/portfolio/innercircle/avatar_icon.png" alt="" />
-      <img src="/img/portfolio/innercircle/coffee_toast.jpg" alt="" />
-      <img src="/img/portfolio/innercircle/letter.jpg" alt="" />
+      <CarouselPic imageLocation="/images/portfolio/inner-circle/logo.png" />
+      <CarouselPic imageLocation="/images/portfolio/inner-circle/coffee_desk.jpg" />
+      <CarouselPic imageLocation="/images/portfolio/inner-circle/avatar_icon.png" />
+      <CarouselPic imageLocation="/images/portfolio/inner-circle/coffee_toast.jpg" />
+      <CarouselPic imageLocation="/images/portfolio/inner-circle/letter.jpg" />
     </ProjectCarousel>
   );
 };

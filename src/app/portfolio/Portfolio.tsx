@@ -7,12 +7,13 @@ import { projectCarousel as projectCarouselInnerCircle } from "./inner-circle/pa
 import { projectInformation as projectInformationInnerCircle } from "./inner-circle/page";
 import { projectCarousel as projectCarouselAWordle } from "./a-wordle/page";
 import { projectInformation as projectInformationAWordle } from "./a-wordle/page";
-
+import { projectCarousel as projectCarouselPortfolio } from "./portfolio/page";
+import { projectInformation as projectInformationPortfolio } from "./portfolio/page";
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = React.useState("*");
   const portfolioItems = [
     {
-      imageName: "innercircle/logo.png",
+      imageLocation: "/images/portfolio/inner-circle/logo.png",
       link: "/portfolio/inner-circle",
       title: "InnerCircle",
       filter: "*react",
@@ -20,12 +21,20 @@ export default function Portfolio() {
       projectInformation: projectInformationInnerCircle(),
     },
     {
-      imageName: "awordle/game.png",
+      imageLocation: "/images/portfolio/a-wordle/game.png",
       link: "/portfolio/a-wordle",
       title: "A Wordle Game",
       filter: "*htmlcssjavascript",
       projectCarousel: projectCarouselAWordle(),
       projectInformation: projectInformationAWordle(),
+    },
+    {
+      imageLocation: "/images/portfolio/portfolio/screenCapture.gif",
+      link: "/portfolio/portfolio",
+      title: "My Portfolio",
+      filter: "*reacthtmlcssjavascript",
+      projectCarousel: projectCarouselPortfolio(),
+      projectInformation: projectInformationPortfolio(),
     },
   ];
   return (
@@ -45,13 +54,16 @@ export default function Portfolio() {
           setActiveFilter={setActiveFilter}
         />
       </Row>
-      <Row scale="large" additionalClassName="flex flex-wrap justify-left">
+      <Row
+        scale="large"
+        additionalClassName="flex justify-center flex-wrap items-center"
+      >
         {portfolioItems
           .filter((item) => item.filter.includes(activeFilter))
           .map((item) => (
-            <div className="w-4/12">
+            <div className="w-3/12 min-w-[350px]">
               <PortfolioItem
-                imageName={item.imageName}
+                imageLocation={item.imageLocation}
                 link={item.link}
                 title={item.title}
                 projectCarousel={item.projectCarousel}

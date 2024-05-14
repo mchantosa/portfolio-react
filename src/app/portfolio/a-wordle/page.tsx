@@ -4,15 +4,16 @@ import ProjectCarousel from "../ProjectCarousel";
 import ProjectDescription from "../ProjectDescription";
 import ProjectInformation from "../ProjectInformation";
 import ProjectPageTemplate from "../ProjectPageTemplate";
+import { CarouselPic } from "@/app/utils/GetImage";
 import { anchorTailwind } from "@/app/styles/style";
 const aTailwind = anchorTailwind;
 
 export const projectCarousel = () => {
   return (
     <ProjectCarousel>
-      <img src="/img/portfolio/awordle/game.png" alt="" />
-      <img src="/img/portfolio/awordle/dictionary.jpg" alt="" />
-      <img src="/img/portfolio/awordle/brunch.jpg" alt="" />
+      <CarouselPic imageLocation="/images/portfolio/a-wordle/game.png" />
+      <CarouselPic imageLocation="/images/portfolio/a-wordle/dictionary.jpg" />
+      <CarouselPic imageLocation="/images/portfolio/a-wordle/brunch.jpg" />
     </ProjectCarousel>
   );
 };

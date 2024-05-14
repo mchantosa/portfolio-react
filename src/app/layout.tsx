@@ -7,10 +7,14 @@ import Navigation from "./navigation/Navigation";
 import Footer from "./navigation/Footer";
 import AppContainer from "./utils/AppContainer";
 import ScrollToTop from "./navigation/ScrollToTop";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Megan Chantosa",
   description: "Megan Chantosa's portfolio site",
+  icons: {
+    icon: "/images/favicons/favicon.ico",
+  },
 };
 
 export default function RootLayout({

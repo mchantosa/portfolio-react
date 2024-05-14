@@ -3,7 +3,7 @@ import React from "react";
 import ProjectModal from "./ProjectModal";
 
 export default function PortfolioItem(props: {
-  imageName: string;
+  imageLocation: string;
   link: string;
   title: string;
   projectCarousel: React.ReactNode;
@@ -34,7 +34,7 @@ export default function PortfolioItem(props: {
     "hover:bg-anchorBlue",
   ];
 
-  const { imageName, link, title, projectCarousel, projectInformation } = props;
+  const { imageLocation, link, projectCarousel, projectInformation } = props;
   const [hovering, setHovering] = React.useState(false);
   const [modal, setModal] = React.useState(false);
 
@@ -48,11 +48,7 @@ export default function PortfolioItem(props: {
       }}
       className={[...wrapTailwind].join(" ")}
     >
-      <img
-        src={"/img/portfolio/" + imageName}
-        className={imgTailwind.join(" ")}
-        alt=""
-      />
+      <img src={imageLocation} className={imgTailwind.join(" ")} alt="" />
       {hovering && (
         <div className={[...linksTailwind, "-mt-16"].join(" ")}>
           <span

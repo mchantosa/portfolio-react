@@ -22,7 +22,7 @@ export default function Hero() {
   const heroStyle: React.CSSProperties = {
     width: "100%",
     height: "100vh",
-    background: "url(/img/hero-bg.jpg) top center",
+    background: "url(/images/hero-bg.jpg) top center",
     backgroundSize: "cover",
   };
   const heroContainerStyle: React.CSSProperties = {
@@ -87,7 +87,7 @@ export default function Hero() {
     <>
       <Section
         id="hero"
-        theme="hero"
+        theme="white"
         additionalClassName={heroTailwind}
         additionalStyle={heroStyle}
       >

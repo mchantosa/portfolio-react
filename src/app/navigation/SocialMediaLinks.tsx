@@ -42,7 +42,6 @@ export default function SocialMediaLinks() {
   const imageTailwind = [
     "mx-auto",
     "block",
-    // "w-36",
     "border-8",
     "border-solid",
     "border-gray-900",

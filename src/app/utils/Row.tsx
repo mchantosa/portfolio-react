@@ -7,16 +7,17 @@ export default function Row(props: {
   const rowLargeTailwind = [
     "flex",
     "flex-row",
-    "items-top",
     "flex-wrap",
     "lg:flex-nowrap",
+    "justify-center",
+    "items-top",
   ];
   const rowSmallTailwind = [
     "flex",
     "flex-row",
-    "items-center",
     "flex-wrap",
-    "sm:flex-nowrap",
+    "md:flex-nowrap",
+    "items-center",
   ];
   if (scale === "small") {
     return (
