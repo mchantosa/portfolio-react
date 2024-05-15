@@ -26,7 +26,7 @@ export default function HeroTypeAnimation() {
   return (
     <div className={poppins.className}>
       <p style={pStyle}>
-        <span>I'm a </span>
+        <span>I&apos;m a </span>
         <TypeAnimation
           sequence={[
             "software engineer",

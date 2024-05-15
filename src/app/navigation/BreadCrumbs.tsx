@@ -27,9 +27,9 @@ export default function Breadcrumbs(props: {
   const { crumbs } = props;
   return (
     <ol className={[...olTailwind].join(" ")}>
-      {crumbs.map((crumb) =>
+      {crumbs.map((crumb, index) =>
         crumb.link ? (
-          <li className={liTailwind.join(" ")}>
+          <li className={liTailwind.join(" ")} key={index}>
             <a href={crumb.link} className={aTailwind.join(" ")}>
               {crumb.title}
             </a>

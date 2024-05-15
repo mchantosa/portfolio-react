@@ -53,7 +53,7 @@ export default function Experience() {
               aWordle
             </a>
             , a word guessing game strongly resembling Wordle. Built as a single
-            page vanilla HTML/CSS/JavaScript, "gist-able" application.
+            page vanilla HTML/CSS/JavaScript, &quot;gist-able&quot; application.
           </li>
           <li className={liTailwind.join(" ")}>
             Freelance{" "}
@@ -82,7 +82,7 @@ export default function Experience() {
             Home taught kids through a pandemic.
           </li>
           <li className={liTailwind.join(" ")}>
-            Grew some mushrooms (oyster, lion's main, shiitake).
+            Grew some mushrooms (oyster, lion&apos;s main, shiitake).
           </li>
         </ul>
       </ExperienceItem>
