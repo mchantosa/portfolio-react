@@ -8,7 +8,7 @@ import { CarouselPic } from "@/app/utils/GetImage";
 import { anchorTailwind } from "@/app/styles/style";
 const aTailwind = anchorTailwind;
 
-export const projectCarousel = () => {
+export const projectCarousel: () => React.ReactNode = () => {
   return (
     <ProjectCarousel>
       <CarouselPic imageLocation="/images/portfolio/a-wordle/game.png" />
@@ -18,7 +18,7 @@ export const projectCarousel = () => {
   );
 };
 
-export const projectInformation = () => {
+export const projectInformation: () => React.ReactNode = () => {
   const content = [
     { heading: "Category", description: "Dynamic web application" },
     { heading: "Client", description: "Independent project" },
@@ -56,7 +56,7 @@ export const projectInformation = () => {
   return <ProjectInformation content={content} />;
 };
 
-const projectDescription = () => {
+const projectDescription: () => React.ReactNode = () => {
   const content = [
     {
       heading: "About A Wordle",
