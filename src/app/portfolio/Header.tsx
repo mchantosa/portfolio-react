@@ -1,5 +1,7 @@
 import { headersTailwind } from "../styles/style";
 import Breadcrumbs from "@/app/navigation/BreadCrumbs";
+import { useGlobalState } from "../utils/GlobalStateContexts";
+
 const headerTailwind = ["py-6", "bg-backgroundGray"];
 const h2Tailwind = [
   ...headersTailwind.header2Tailwind,
@@ -23,10 +25,16 @@ export default function Header(props: {
   crumbs: { title: string; link: string }[];
 }) {
   const { title, crumbs } = props;
+  const { hasMobileToggle } = useGlobalState();
 
   return (
     <header className={headerTailwind.join(" ")}>
-      <div className={crumbContainerTailwind.join(" ")}>
+      <div
+        className={[
+          ...crumbContainerTailwind,
+          hasMobileToggle ? "mr-12" : "",
+        ].join(" ")}
+      >
         <h2 className={h2Tailwind.join(" ")}>{title}</h2>
         <Breadcrumbs crumbs={crumbs} />
       </div>
