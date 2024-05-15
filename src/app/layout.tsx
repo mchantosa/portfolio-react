@@ -7,7 +7,6 @@ import Navigation from "./navigation/Navigation";
 import Footer from "./navigation/Footer";
 import AppContainer from "./utils/AppContainer";
 import ScrollToTop from "./navigation/ScrollToTop";
-import Menu from "./navigation/Menu";
 
 export const metadata: Metadata = {
   title: "Megan Chantosa",
