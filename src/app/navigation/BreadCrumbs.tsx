@@ -35,7 +35,9 @@ export default function Breadcrumbs(props: {
             </a>
           </li>
         ) : (
-          <li className={liTailwind.join(" ")}>{crumb.title}</li>
+          <li className={liTailwind.join(" ")} key={index}>
+            {crumb.title}
+          </li>
         )
       )}
     </ol>
