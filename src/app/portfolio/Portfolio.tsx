@@ -49,8 +49,8 @@ export default function Portfolio() {
           UI on Deno with Deno-KV for a datastore. The Wordle inspired
           application is an example of a single page web application that uses
           strictly JavaScript, CSS, and HTML and not hosted, but served through
-          githubraw. This website is derived from a bootstrap template and
-          hosted on Deno.
+          githubraw. This website is done with React and Tailwind in a NextJS
+          framework.
         </p>
       </Row>
       <Row scale="large" additionalClassName="my-5, justify-center">

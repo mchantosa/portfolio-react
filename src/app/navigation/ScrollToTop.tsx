@@ -21,13 +21,13 @@ export default function ScrollToTop() {
   const [heroVisible, setHeroVisible] = useState(true);
 
   useEffect(() => {
-    // Function to check if the #hero section is not on screen
     const handleScroll = () => {
       const heroSection = document.getElementById("hero");
       if (heroSection) {
         const heroSectionRect = heroSection.getBoundingClientRect();
         const isHeroPartiallyVisible =
           heroSectionRect.top < -0.5 * window.innerHeight;
+        //completely not on screen
         //heroSectionRect.bottom > 0;
         //heroSectionRect.top < window.innerHeight;
         setHeroVisible(!isHeroPartiallyVisible);
@@ -35,17 +35,13 @@ export default function ScrollToTop() {
     };
 
     handleScroll();
-
-    // Add event listener for scroll
     window.addEventListener("scroll", handleScroll);
 
-    // Remove event listener on cleanup
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
-    // Only render the button if the hero section is significantly not on screen and
     !heroVisible && (
       <div
         id="scrollToTop"
