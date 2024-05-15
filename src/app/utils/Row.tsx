@@ -8,7 +8,7 @@ export default function Row(props: {
     "flex",
     "flex-row",
     "flex-wrap",
-    "lg:flex-nowrap",
+    //"lg:flex-nowrap",
     "justify-center",
     "items-top",
   ];

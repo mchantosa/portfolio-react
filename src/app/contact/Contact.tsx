@@ -10,7 +10,7 @@ export default function Contact() {
       <p className={pTailwind.join(" ")}>
         It is best to contact me through email, I screen my calls
       </p>
-      <Row scale="large" additionalClassName="gap-5">
+      <Row scale="large" additionalClassName="gap-5 lg:flex-nowrap">
         <div className="w-full max-w-2xl lg:w-6/12 flex ">
           <div className={infoTailwind.join(" ")}>
             <div>

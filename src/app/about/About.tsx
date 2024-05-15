@@ -21,7 +21,7 @@ export default function About() {
           and professional development.
         </p>
       </Row>
-      <Row scale="large">
+      <Row scale="large" additionalClassName="lg:flex-nowrap">
         <div className="lg:w-5/12 w-full max-w-2xl pb-4 lg:pb-0 animate-fade-in-fast">
           <AboutCarousel />
         </div>

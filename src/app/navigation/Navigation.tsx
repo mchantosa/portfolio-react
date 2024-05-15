@@ -2,9 +2,9 @@
 import { useEffect } from "react";
 import SocialMediaLinks from "./SocialMediaLinks";
 import PageLinks from "./PageLinks";
-import { Drawer } from "@material-tailwind/react";
 import { useGlobalState } from "../utils/GlobalStateContexts";
 import { FooterNav } from "./Footer";
+import React from "react";
 
 function Menu() {
   const { openMenu } = useGlobalState();
@@ -18,30 +18,24 @@ function Menu() {
     "p-4",
     "bg-darkGrayBlackBlue",
     "overflow-y-auto",
+    openMenu ? "animate-slide-in-left" : "animate-slide-out-left",
     "z-40",
   ];
 
   return (
-    <Drawer
-      open={openMenu}
-      overlay={false}
-      className={menuTailwind.join(" ")}
-      // onClose={() => setIsOpen(false)}
-      placeholder={undefined}
-      onPointerEnterCapture={undefined}
-      onPointerLeaveCapture={undefined}
-    >
+    <div className={menuTailwind.join(" ")}>
       <div className="mb-6">
         <SocialMediaLinks />
         <PageLinks />
       </div>
       <FooterNav />
-    </Drawer>
+    </div>
   );
 }
 
 function Hamburger() {
   const { openMenu, setOpenMenu, hasMobileToggle } = useGlobalState();
+
   const hamburgerTailwind = [
     "flex", // Flex container
     "items-center", // Center items vertically

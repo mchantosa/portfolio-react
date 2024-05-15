@@ -7,7 +7,7 @@ import Navigation from "./navigation/Navigation";
 import Footer from "./navigation/Footer";
 import AppContainer from "./utils/AppContainer";
 import ScrollToTop from "./navigation/ScrollToTop";
-import Head from "next/head";
+import Menu from "./navigation/Menu";
 
 export const metadata: Metadata = {
   title: "Megan Chantosa",
@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en" className={open_sans.className}>
       <body>
         <AppContainer>
+          {/* <Menu /> */}
           <Navigation />
           {children}
           <Footer />

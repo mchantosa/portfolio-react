@@ -19,6 +19,8 @@ module.exports = withMT({
         "fade-in": "fade-in 5s ease-in-out", // Define the custom animation
         "fade-in-fast": "fade-in 1s ease-in-out",
         "slide-in-right": "slide-in-right 0.5s ease-in-out",
+        "slide-in-left": "slide-in-left .5s ease-in-out",
+        "slide-out-left": "slide-out-left .5s ease-in-out",
         "slide-in-bottom": "slide-in-bottom 0.5s ease-in-out",
       },
       keyframes: {
@@ -31,8 +33,12 @@ module.exports = withMT({
           "100%": { transform: "translateX(0)", opacity: "1" },
         },
         "slide-in-left": {
-          "0%": { transform: "translateX(0%)", opacity: "0" },
-          "100%": { transform: "translateX(100%)", opacity: "1" },
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0%)", opacity: "1" },
+        },
+        "slide-out-left": {
+          "0%": { transform: "translateX(0%)", opacity: "1" },
+          "100%": { transform: "translateX(-100%)", opacity: "0" },
         },
         "slide-in-bottom": {
           "0%": {
