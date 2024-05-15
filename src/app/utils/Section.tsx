@@ -8,6 +8,7 @@ export default function Section(props: {
   theme: string;
   additionalClassName?: string | undefined;
   additionalStyle?: React.CSSProperties;
+  ref?: any;
   children?: any;
 }) {
   const { openMenu } = useGlobalState();

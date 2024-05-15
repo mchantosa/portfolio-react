@@ -1,8 +1,7 @@
 "use client";
 import { raleway } from "../styles/fonts";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useMounted } from "../utils/hooks";
-import { isElementVisible } from "../utils/helpers";
 import Section from "../utils/Section";
 import HeroTypeAnimation from "./HeroTypeAnimation";
 
@@ -58,18 +57,13 @@ export default function Hero() {
     }
   }
 
-  const hero = useRef(null);
-
   useEffect(() => {
     const handleResize = () => {
-      console.log("watch me resize");
       setSize(window.innerWidth);
     };
 
     const handleScroll = () => {
-      console.log("watch me scroll");
-      const isHeroVisible = isElementVisible(hero.current);
-      console.log("hero: ", isHeroVisible);
+      return;
     };
 
     // Listen for resize events
@@ -81,8 +75,7 @@ export default function Hero() {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array ensures this effect runs only once after mount
-
+  }, []);
   return (
     <>
       <Section
