@@ -39,7 +39,7 @@ export default function FilterMenu(props: {
   const { activeFilter, setActiveFilter } = props;
   return (
     <ul className={ulTailwind.join(" ")}>
-      {activeFilters.map((filter) => (
+      {activeFilters.map((filter, index) => (
         <li
           onClick={() => setActiveFilter(filter.filter)}
           className={[
@@ -48,6 +48,7 @@ export default function FilterMenu(props: {
               ? liActiveTailwind.join(" ")
               : liInactiveTailwind.join(" "),
           ].join(" ")}
+          key={index}
         >
           {filter.title}
         </li>

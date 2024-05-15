@@ -16,8 +16,8 @@ export default function LeftCarrotList(props: {
   const { listItems } = props;
   return (
     <ul className={ulTailwind.join(" ")}>
-      {listItems.map((item) => (
-        <li className={liTailwind.join(" ")}>
+      {listItems.map((item, index) => (
+        <li className={liTailwind.join(" ")} key={index}>
           <i className={liIconTailwind.join(" ")}></i>{" "}
           <strong className={liStrongTailwind.join(" ")}>{item.title}:</strong>{" "}
           <span>{item.value}</span>

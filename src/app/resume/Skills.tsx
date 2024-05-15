@@ -9,43 +9,45 @@ export default function Skills() {
         <SkillSet
           skillTitle="Languages"
           skills={["JavaScript", "TypeScript", "Python", "Java", "R", "MatLab"]}
-          children={""}
-        />
-        <SkillSet
-          skillTitle="Environments"
-          skills={["Node", "Deno", "JRM"]}
-          children={""}
-        />
+        >
+          {""}
+        </SkillSet>
+        <SkillSet skillTitle="Environments" skills={["Node", "Deno", "JRM"]}>
+          {""}
+        </SkillSet>
         <SkillSet
           skillTitle="Frameworks"
           skills={["React", "Express", "Fresh"]}
-          children={""}
-        />
+        >
+          {""}
+        </SkillSet>
         <SkillSet
           skillTitle="Databases"
           skills={["PostgreSQL", "Supabase", "Deno-KV"]}
-          children={""}
-        />
-        <SkillSet
-          skillTitle="DevOps"
-          skills={["Docker", "AWS", "Git"]}
-          children={""}
-        />
+        >
+          {""}
+        </SkillSet>
+        <SkillSet skillTitle="DevOps" skills={["Docker", "AWS", "Git"]}>
+          {""}
+        </SkillSet>
         <SkillSet
           skillTitle="Testing"
           skills={["Jest", "Cypress", "Postman", "jUnit"]}
-          children={""}
-        />
+        >
+          {""}
+        </SkillSet>
         <SkillSet
           skillTitle="Front End"
           skills={["HTML", "CSS", "Tailwind", "Bootstrap", "Daisy UI"]}
-          children={""}
-        />
+        >
+          {""}
+        </SkillSet>
         <SkillSet
           skillTitle="Team/Human"
           skills={["Agile", "Scrum", "Jira", "Azure DevOps"]}
-          children={""}
-        />
+        >
+          {""}
+        </SkillSet>
       </ResumeItem>
     </SubSection>
   );

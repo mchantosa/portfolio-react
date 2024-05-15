@@ -65,8 +65,8 @@ export default function Portfolio() {
       >
         {portfolioItems
           .filter((item) => item.filter.includes(activeFilter))
-          .map((item) => (
-            <div className="w-3/12 min-w-[350px]">
+          .map((item, index) => (
+            <div className="w-3/12 min-w-[350px]" key={index}>
               <PortfolioItem
                 imageLocation={item.imageLocation}
                 link={item.link}

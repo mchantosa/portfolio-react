@@ -1,6 +1,7 @@
 import { truncate } from "fs";
 import React from "react";
 import ProjectModal from "./ProjectModal";
+import Image from "next/image";
 
 export default function PortfolioItem(props: {
   imageLocation: string;
@@ -48,7 +49,13 @@ export default function PortfolioItem(props: {
       }}
       className={[...wrapTailwind].join(" ")}
     >
-      <img src={imageLocation} className={imgTailwind.join(" ")} alt="" />
+      <Image
+        src={imageLocation}
+        alt=""
+        width={350}
+        height={350}
+        className={imgTailwind.join(" ")}
+      />
       {hovering && (
         <div className={[...linksTailwind, "-mt-16"].join(" ")}>
           <span
