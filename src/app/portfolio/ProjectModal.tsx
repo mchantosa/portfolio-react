@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 export default function ProjectModal(props: {
+  title: string;
   projectCarousel: React.ReactNode;
   ProjectDescription: React.ReactNode;
   setModal: Function;
@@ -8,6 +9,7 @@ export default function ProjectModal(props: {
   children?: React.ReactNode;
 }) {
   const {
+    title,
     projectCarousel,
     ProjectDescription,
     setModal,
@@ -49,6 +51,16 @@ export default function ProjectModal(props: {
       <div className="fixed inset-0 z-[99] w-screen overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
           <div className="xs:w-full sm:w-10/12 md:w-7/12 lg:w-5/12 relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:p-6">
+            <div className="sm:flex sm:items-center sm:justify-between">
+              <h1 className="text-3xl font-semibold">{title}</h1>
+              <i
+                className="bx bx-x bx-sm cursor-pointer text-anchorBlue hover:text-anchorBlueHover"
+                onClick={() => {
+                  setModal(false);
+                  setHovering(false);
+                }}
+              ></i>
+            </div>
             <div>{projectCarousel}</div>
             <div>{ProjectDescription}</div>
             <div>{children}</div>

@@ -73,6 +73,7 @@ export default function PortfolioItem(props: {
       )}
       {modal && (
         <ProjectModal
+          title={props.title}
           projectCarousel={projectCarousel}
           ProjectDescription={projectInformation}
           setModal={setModal}

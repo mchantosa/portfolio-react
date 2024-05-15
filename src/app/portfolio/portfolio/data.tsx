@@ -25,11 +25,11 @@ export const projectInformation = () => {
         },
         {
           heading: "Client",
-          description: "My personal website site",
+          description: "My professional website site",
         },
         {
           heading: "Published",
-          description: "My personal website site",
+          description: "Latest update: 2024-05-14",
         },
         {
           heading: "Project Url",
@@ -37,7 +37,7 @@ export const projectInformation = () => {
             <a
               href="https://megan.chantosa.com"
               target="_blank"
-              className={[aTailwind].join(" ")}
+              className={aTailwind.join(" ")}
             >
               megan.chantosa.com
             </a>
@@ -45,11 +45,19 @@ export const projectInformation = () => {
         },
         {
           heading: "Code",
-          description: "",
+          description: (
+            <a
+              href="https://github.com/mchantosa/portfolio-react"
+              target="_blank"
+              className={aTailwind.join(" ")}
+            >
+              Github repo
+            </a>
+          ),
         },
         {
           heading: "Stack",
-          description: "React/Tailwind",
+          description: "React/Tailwind/HTML/CSS",
         },
       ]}
     />
@@ -59,14 +67,9 @@ export const projectInformation = () => {
 export const projectDescription = () => {
   const content = [
     {
-      heading: "About A Wordle",
+      heading: "About Portfolio",
       description:
-        "A Wordle is a single page web application that uses strictly",
-    },
-    {
-      heading: "About A Wordle",
-      description:
-        "A Wordle is a single page web application that uses strictly",
+        "Perhaps this is a bit of Inception, a portfolio that self references. I had a lot of fun creating this portfolio. I left the bootstrap copyright reference in the footer. The template I used for this was HTML/JavaScript/CSS/Bootstrap. There is very little of the original code left, I kept the theme in spirit, but completely rebuilt and customized it using React and Tailwind. The only remaining HTML/CSS in this website is the printable resume I added to the template.",
     },
   ];
   return <ProjectDescription content={content} />;

@@ -3,7 +3,6 @@ import Section from "@/app/utils/Section";
 import Row from "@/app/utils/Row";
 
 const pageTailwind = ["bg-white"];
-const containerTailwind = [];
 
 export default function Page(props: {
   projectCarousel: React.ReactNode;
