@@ -4,12 +4,12 @@ import PortfolioItem from "./PortfolioItem";
 import FilterMenu from "./FilterMenu";
 import React from "react";
 import { paragraphTailwind } from "../styles/style";
-import { projectCarousel as projectCarouselInnerCircle } from "./inner-circle/page";
-import { projectInformation as projectInformationInnerCircle } from "./inner-circle/page";
+import { projectCarousel as projectCarouselInnerCircle } from "./inner-circle/data";
+import { projectInformation as projectInformationInnerCircle } from "./inner-circle/data";
 import { projectCarousel as projectCarouselAWordle } from "./a-wordle/data";
 import { projectInformation as projectInformationAWordle } from "./a-wordle/data";
-import { projectCarousel as projectCarouselPortfolio } from "./portfolio/page";
-import { projectInformation as projectInformationPortfolio } from "./portfolio/page";
+import { projectCarousel as projectCarouselPortfolio } from "./portfolio/data";
+import { projectInformation as projectInformationPortfolio } from "./portfolio/data";
 const pTailwind = paragraphTailwind;
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = React.useState("*");

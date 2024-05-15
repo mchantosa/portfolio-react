@@ -1,0 +1,73 @@
+import { CarouselPic } from "@/app/utils/GetImage";
+import ProjectCarousel from "../ProjectCarousel";
+import ProjectDescription from "../ProjectDescription";
+import ProjectInformation from "../ProjectInformation";
+import { anchorTailwind } from "@/app/styles/style";
+const aTailwind = anchorTailwind;
+
+export const projectCarousel = () => {
+  return (
+    <ProjectCarousel>
+      <CarouselPic imageLocation="/images/portfolio/portfolio/screenCapture.gif" />
+      <CarouselPic imageLocation="/images/profile.jpg" />
+      <CarouselPic imageLocation="/images/portfolio/portfolio/resume.gif" />
+    </ProjectCarousel>
+  );
+};
+export const projectInformation = () => {
+  return (
+    <ProjectInformation
+      content={[
+        {
+          heading: "Description",
+          description:
+            "An aggregation and demo of skill, experience, education, and personality",
+        },
+        {
+          heading: "Client",
+          description: "My personal website site",
+        },
+        {
+          heading: "Published",
+          description: "My personal website site",
+        },
+        {
+          heading: "Project Url",
+          description: (
+            <a
+              href="https://megan.chantosa.com"
+              target="_blank"
+              className={[aTailwind].join(" ")}
+            >
+              megan.chantosa.com
+            </a>
+          ),
+        },
+        {
+          heading: "Code",
+          description: "",
+        },
+        {
+          heading: "Stack",
+          description: "React/Tailwind",
+        },
+      ]}
+    />
+  );
+};
+
+export const projectDescription = () => {
+  const content = [
+    {
+      heading: "About A Wordle",
+      description:
+        "A Wordle is a single page web application that uses strictly",
+    },
+    {
+      heading: "About A Wordle",
+      description:
+        "A Wordle is a single page web application that uses strictly",
+    },
+  ];
+  return <ProjectDescription content={content} />;
+};
