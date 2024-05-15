@@ -2,8 +2,11 @@ import { CarouselPic } from "@/app/utils/GetImage";
 import ProjectCarousel from "../ProjectCarousel";
 import ProjectDescription from "../ProjectDescription";
 import ProjectInformation from "../ProjectInformation";
-import { anchorTailwind } from "@/app/styles/style";
+import { anchorTailwind, paragraphTailwind } from "@/app/styles/style";
+import SeparatedList from "@/app/utils/SeparatedList";
+import { skillDivTailwind } from "../style";
 const aTailwind = anchorTailwind;
+
 
 export const projectCarousel = () => {
   return (
@@ -29,7 +32,7 @@ export const projectInformation = () => {
         },
         {
           heading: "Published",
-          description: "Latest update: 2024-05-14",
+          description: "Latest update: 2024-05-15",
         },
         {
           heading: "Project Url",
@@ -57,7 +60,12 @@ export const projectInformation = () => {
         },
         {
           heading: "Stack",
-          description: "React/Tailwind/HTML/CSS",
+          description: (
+            <SeparatedList
+              list={["NextJS", "React", "Tailwind", "HTML", "CSS"]}
+              additionalClassName={skillDivTailwind.join(" ")}
+            />
+          ),
         },
       ]}
     />
@@ -67,7 +75,7 @@ export const projectInformation = () => {
 export const projectDescription = () => {
   const content = [
     {
-      heading: "About Portfolio",
+      heading: "About My Portfolio",
       description:
         "Perhaps this is a bit of Inception, a portfolio that self references. I had a lot of fun creating this portfolio. I left the bootstrap copyright reference in the footer. The template I used for this was HTML/JavaScript/CSS/Bootstrap. There is very little of the original code left, I kept the theme in spirit, but completely rebuilt and customized it using React and Tailwind. The only remaining HTML/CSS in this website is the printable resume I added to the template.",
     },

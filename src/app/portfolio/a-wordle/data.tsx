@@ -3,6 +3,8 @@ import ProjectCarousel from "../ProjectCarousel";
 import ProjectDescription from "../ProjectDescription";
 import ProjectInformation from "../ProjectInformation";
 import { anchorTailwind } from "@/app/styles/style";
+import SeparatedList from "@/app/utils/SeparatedList";
+import { skillDivTailwind } from "../style";
 const aTailwind = anchorTailwind;
 
 export const projectCarousel: () => React.ReactNode = () => {
@@ -17,7 +19,10 @@ export const projectCarousel: () => React.ReactNode = () => {
 
 export const projectInformation: () => React.ReactNode = () => {
   const content = [
-    { heading: "Category", description: "Dynamic web application" },
+    {
+      heading: "Description",
+      description: "Single-page, vanilla, HTML/CSS/JavaScript application",
+    },
     { heading: "Client", description: "Independent project" },
     { heading: "Project date", description: "Published May 2023" },
     {
@@ -48,7 +53,15 @@ export const projectInformation: () => React.ReactNode = () => {
         </a>
       ),
     },
-    { heading: "Stack", description: "JavaScript, HTML, CSS" },
+    {
+      heading: "Stack",
+      description: (
+        <SeparatedList
+          list={["HTML", "CSS", "JavaScript"]}
+          additionalClassName={skillDivTailwind.join(" ")}
+        />
+      ),
+    },
   ];
   return <ProjectInformation content={content} />;
 };

@@ -3,6 +3,8 @@ import ProjectCarousel from "../ProjectCarousel";
 import ProjectDescription from "../ProjectDescription";
 import ProjectInformation from "../ProjectInformation";
 import { anchorTailwind } from "@/app/styles/style";
+import SeparatedList from "@/app/utils/SeparatedList";
+import { skillDivTailwind } from "../style";
 const aTailwind = anchorTailwind;
 
 export const projectCarousel = () => {
@@ -19,12 +21,12 @@ export const projectCarousel = () => {
 
 export const projectInformation = () => {
   const content = [
-    { heading: "Category", description: "Web Application and API" },
+    { heading: "Description", description: "Web Application and API" },
     { heading: "Client", description: "Independent project" },
     { heading: "Project date", description: "Published October 2023" },
     {
       heading: "Project status",
-      description: "Maintained and receiving regular updates",
+      description: "Maintained, bug fixes and updates",
     },
     {
       heading: "Project URL",
@@ -52,8 +54,20 @@ export const projectInformation = () => {
     },
     {
       heading: "Stack",
-      description:
-        "TypeScript, Deno, Fresh framework, Preact, Tailwind, Daisy UI, Deno-KV",
+      description: (
+        <SeparatedList
+          list={[
+            "TypeScript",
+            "Deno",
+            "Fresh framework",
+            "Preact",
+            "Tailwind",
+            "Daisy UI",
+            "Deno-KV",
+          ]}
+          additionalClassName={skillDivTailwind.join(" ")}
+        />
+      ),
     },
   ];
   return <ProjectInformation content={content} />;

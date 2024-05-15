@@ -1,8 +1,8 @@
 import React from "react";
 import { paragraphTailwind } from "../styles/style";
 import { h6Tailwind } from "./style";
+import SeparatedList from "../utils/SeparatedList";
 
-const spanTailwind = ["text-anchorBlue", "font-bold"];
 const skillDivTailwind = [
   ...paragraphTailwind,
   "flex",
@@ -24,18 +24,10 @@ export default function SkillSet(props: {
   return (
     <>
       <h6 className={h6Tailwind.join(" ")}>{skillTitle}</h6>
-      <div className={skillDivTailwind.join(" ")}>
-        {skills.map((item, index) => (
-          <React.Fragment key={item}>
-            {index > 0 && (
-              <span className={spanTailwind.join(" ")}>
-                &nbsp;&#x25AA;&nbsp;
-              </span>
-            )}
-            {item}
-          </React.Fragment>
-        ))}
-      </div>
+      <SeparatedList
+        list={skills}
+        additionalClassName={skillDivTailwind.join(" ")}
+      />
     </>
   );
 }
