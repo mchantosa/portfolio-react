@@ -101,7 +101,7 @@ export default function Navigation() {
       // Cleanup function
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  });
 
   return (
     <>

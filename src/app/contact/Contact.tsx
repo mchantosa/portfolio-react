@@ -1,6 +1,7 @@
 import Section from "../utils/Section";
 import Row from "../utils/Row";
 import { contactTailwindGroup } from "./style";
+import Image from "next/image";
 const { infoTailwind, iWrapperTailwind, h4Tailwind, pTailwind, pInfoTailwind } =
   contactTailwindGroup;
 
@@ -44,8 +45,10 @@ export default function Contact() {
           </div>
         </div>
         <div className="w-full max-w-2xl lg:w-6/12 flex items-stretch">
-          <img
+          <Image
             src="/images/contact/spaceneedle.jpg"
+            width={600}
+            height={600}
             className="img-fluid"
             alt="The Space Needle"
           />
