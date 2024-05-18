@@ -32,7 +32,7 @@ export default function ProjectModal(props: {
     return () => {
       window.removeEventListener("keyup", handleKeyUp);
     };
-  });
+  }, []);
 
   return (
     <div

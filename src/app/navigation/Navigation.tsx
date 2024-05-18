@@ -83,17 +83,16 @@ export default function Navigation() {
   const { hasMobileToggle, setHasMobileToggle, openMenu, setOpenMenu } =
     useGlobalState();
 
-  const handleResize = () => {
-    if (window.innerWidth > 1140) {
-      setHasMobileToggle(false);
-      setOpenMenu(true);
-    } else {
-      setHasMobileToggle(true);
-      setOpenMenu(false);
-    }
-  };
-
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1140) {
+        setHasMobileToggle(false);
+        setOpenMenu(true);
+      } else {
+        setHasMobileToggle(true);
+        setOpenMenu(false);
+      }
+    };
     handleResize(); //Call on initial render
     window.addEventListener("resize", handleResize); // Handle resize
 
@@ -101,7 +100,7 @@ export default function Navigation() {
       // Cleanup function
       window.removeEventListener("resize", handleResize);
     };
-  });
+  }, []);
 
   return (
     <>
