@@ -3,6 +3,31 @@ import React from "react";
 import ProjectModal from "./ProjectModal";
 import Image from "next/image";
 
+const wrapTailwind = [
+  "flex",
+  "flex-col",
+  "relative",
+  "animate-slide-in-right",
+  "overflow-hidden",
+];
+
+const imgTailwind = ["w-full", "h-auto", "relative", "z-10"];
+
+const linksTailwind = [
+  "flex",
+  "justify-center",
+  "z-30",
+  "animate-slide-in-bottom",
+  "bg-anchorBlue/75",
+];
+const aTailwind = [
+  "text-white",
+  "text-4xl",
+  "text-center",
+  "w-6/12",
+  "hover:bg-anchorBlue",
+];
+
 export default function PortfolioItem(props: {
   imageLocation: string;
   link: string;
@@ -10,31 +35,6 @@ export default function PortfolioItem(props: {
   projectCarousel: React.ReactNode;
   projectInformation: React.ReactNode;
 }) {
-  const wrapTailwind = [
-    "flex",
-    "flex-col",
-    "relative",
-    "animate-slide-in-right",
-    "overflow-hidden",
-  ];
-
-  const imgTailwind = ["w-full", "h-auto", "relative", "z-10"];
-
-  const linksTailwind = [
-    "flex",
-    "justify-center",
-    "z-30",
-    "animate-slide-in-bottom",
-    "bg-anchorBlue/75",
-  ];
-  const aTailwind = [
-    "text-white",
-    "text-4xl",
-    "text-center",
-    "w-6/12",
-    "hover:bg-anchorBlue",
-  ];
-
   const { imageLocation, link, projectCarousel, projectInformation } = props;
   const [hovering, setHovering] = React.useState(false);
   const [modal, setModal] = React.useState(false);

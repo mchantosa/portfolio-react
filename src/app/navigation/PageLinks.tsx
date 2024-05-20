@@ -1,6 +1,23 @@
 import { useState } from "react";
 import { useGlobalState } from "../utils/GlobalStateContexts";
 
+const aTailwind = [
+  "focus: flex",
+  "items-center",
+  "p-2.5",
+  // "mb-8",
+  "text-sm",
+  "animate-fade-in-fast",
+];
+const aHoverTailwind = ["text-white", "no-underline"].map(
+  (el) => "hover:" + el
+);
+const iTailwind = ["text-3xl", "pr-2", "animate-fade-in-fast"];
+const navLinksTailwind = ["pt-8"]; //navbar
+// const navLinksChildrenTailwind = ["m-0", "p-0", "list-none"]; //scrollto active
+const ulTailwind = ["relative", "whitespace-nowrap"];
+const liTailwind = [...ulTailwind];
+
 function PageLink(props: {
   active: string;
   setActive: Function;
@@ -8,22 +25,7 @@ function PageLink(props: {
   boxicon: string;
   text: string;
 }) {
-  const { openMenu, setOpenMenu, hasMobileToggle, setHasMobileToggle } =
-    useGlobalState();
-  const aTailwind = [
-    "focus: flex",
-    "items-center",
-    "p-2.5",
-    // "mb-8",
-    "text-sm",
-    "animate-fade-in-fast",
-  ];
-
-  const aHoverTailwind = ["text-white", "no-underline"].map(
-    (el) => "hover:" + el
-  );
-
-  const iTailwind = ["text-3xl", "pr-2", "animate-fade-in-fast"];
+  const { setOpenMenu, hasMobileToggle } = useGlobalState();
 
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
@@ -69,11 +71,6 @@ function PageLink(props: {
 }
 
 export default function PageLinks() {
-  const navLinksTailwind = ["pt-8"]; //navbar
-  // const navLinksChildrenTailwind = ["m-0", "p-0", "list-none"]; //scrollto active
-  const ulTailwind = ["relative", "whitespace-nowrap"];
-  const liTailwind = [...ulTailwind];
-
   const [active, setActive] = useState("#hero");
 
   return (

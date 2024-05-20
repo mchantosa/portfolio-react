@@ -93,6 +93,7 @@ export default function Navigation() {
         setOpenMenu(false);
       }
     };
+    
     handleResize(); //Call on initial render
     window.addEventListener("resize", handleResize); // Handle resize
 

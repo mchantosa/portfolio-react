@@ -5,38 +5,38 @@ import { useMounted } from "../utils/hooks";
 import Section from "../utils/Section";
 import HeroTypeAnimation from "./HeroTypeAnimation";
 
-export default function Hero() {
-  // Define styles
-  const heroTailwind = "flex flex-col justify-center items-center";
-  const overlayStyle: React.CSSProperties = {
-    content: "",
-    background: "rgba(5, 13, 24, 0.3)",
-    position: "absolute",
-    bottom: 0,
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1,
-  };
-  const heroStyle: React.CSSProperties = {
-    width: "100%",
-    height: "100vh",
-    background: "url(/images/hero-bg.jpg) top center",
-    backgroundSize: "cover",
-  };
-  const heroContainerStyle: React.CSSProperties = {
-    position: "relative",
-    zIndex: 2,
-    minWidth: "300px",
-  };
-  const h1Style = {
-    margin: "0 0 10px 0",
-    fontSize: "64px",
-    fontWeight: "700",
-    lineHeight: "56px",
-    color: "#fff",
-  };
+// Define styles
+const heroTailwind = "flex flex-col justify-center items-center";
+const overlayStyle: React.CSSProperties = {
+  content: "",
+  background: "rgba(5, 13, 24, 0.3)",
+  position: "absolute",
+  bottom: 0,
+  top: 0,
+  left: 0,
+  right: 0,
+  zIndex: 1,
+};
+const heroStyle: React.CSSProperties = {
+  width: "100%",
+  height: "100vh",
+  background: "url(/images/hero-bg.jpg) top center",
+  backgroundSize: "cover",
+};
+const heroContainerStyle: React.CSSProperties = {
+  position: "relative",
+  zIndex: 2,
+  minWidth: "300px",
+};
+const h1Style = {
+  margin: "0 0 10px 0",
+  fontSize: "64px",
+  fontWeight: "700",
+  lineHeight: "56px",
+  color: "#fff",
+};
 
+export default function Hero() {
   //Trigger media query on window resize
   const [size, setSize] = useState(0);
   const mounted = useMounted();
