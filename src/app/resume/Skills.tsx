@@ -8,7 +8,15 @@ export default function Skills() {
       <ResumeItem>
         <SkillSet
           skillTitle="Languages"
-          skills={["JavaScript", "TypeScript", "Python", "Java", "R", "MatLab"]}
+          skills={[
+            "JavaScript",
+            "TypeScript",
+            "Solidity",
+            "Python",
+            "Java",
+            "R",
+            "MatLab",
+          ]}
         >
           {""}
         </SkillSet>
@@ -32,13 +40,13 @@ export default function Skills() {
         </SkillSet>
         <SkillSet
           skillTitle="Testing"
-          skills={["Jest", "Cypress", "Postman", "jUnit"]}
+          skills={["Jest", "Cypress", "Playwright", "Postman", "jUnit"]}
         >
           {""}
         </SkillSet>
         <SkillSet
           skillTitle="Front End"
-          skills={["HTML", "CSS", "Tailwind", "Bootstrap", "Daisy UI"]}
+          skills={["HTML", "CSS", "Tailwind", "Bootstrap", "Daisy UI", "Figma"]}
         >
           {""}
         </SkillSet>

@@ -28,7 +28,10 @@ export default function Experience() {
       >
         <ul className={ulTailwind.join(" ")}>
           <li className={liTailwind.join(" ")}>
-            Manage , maintain, and improve multiple WordPress websites for
+            Delivered a prototype of smart contract application using Figma.
+          </li>
+          <li className={liTailwind.join(" ")}>
+            Manage, maintain, and improve multiple WordPress websites for
             client.
           </li>
           <li className={liTailwind.join(" ")}>
