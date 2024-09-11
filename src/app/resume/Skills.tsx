@@ -20,7 +20,10 @@ export default function Skills() {
         >
           {""}
         </SkillSet>
-        <SkillSet skillTitle="Environments" skills={["Node", "Deno", "JRM"]}>
+        <SkillSet
+          skillTitle="Environments"
+          skills={["Node", "Deno", "JRM", "Web3"]}
+        >
           {""}
         </SkillSet>
         <SkillSet
@@ -46,7 +49,15 @@ export default function Skills() {
         </SkillSet>
         <SkillSet
           skillTitle="Front End"
-          skills={["HTML", "CSS", "Tailwind", "Bootstrap", "Daisy UI", "Figma"]}
+          skills={[
+            "HTML",
+            "CSS",
+            "Material UI",
+            "Tailwind",
+            "Bootstrap",
+            "Daisy UI",
+            "Figma",
+          ]}
         >
           {""}
         </SkillSet>

@@ -28,6 +28,19 @@ export default function Experience() {
       >
         <ul className={ulTailwind.join(" ")}>
           <li className={liTailwind.join(" ")}>
+            Created{" "}
+            <a
+              href="https://crowdfund.megan.chantosa.com/"
+              target="_blank"
+              className={aTailwind.join(" ")}
+            >
+              Crowdfund
+            </a>
+            , a decentralized application for crowdfunding. Built with NextJS,
+            MaterialUI, Solidity, and Hardhat, supporting multiple Ethereum
+            networks.
+          </li>
+          <li className={liTailwind.join(" ")}>
             Delivered a prototype of smart contract application using Figma.
           </li>
           <li className={liTailwind.join(" ")}>
