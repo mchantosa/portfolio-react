@@ -7,8 +7,9 @@ const projectDetailsTailwindGroup = {
     "text-2xl",
     "font-bold",
     "text-headerGray",
+    "pb-2",
   ],
-  pTailwind: ["text-paragraphText"],
+  pTailwind: ["text-paragraphText", "pb-4", "leading-relaxed"],
 };
 const { containerTailwind, h2Tailwind, pTailwind } =
   projectDetailsTailwindGroup;
