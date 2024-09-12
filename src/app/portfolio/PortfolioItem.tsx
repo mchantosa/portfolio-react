@@ -57,7 +57,7 @@ export default function PortfolioItem(props: {
         className={imgTailwind.join(" ")}
       />
       {hovering && (
-        <div className={[...linksTailwind, "-mt-16"].join(" ")}>
+        <div className={[...linksTailwind, "-mt-10"].join(" ")}>
           <span
             onClick={() => {
               setModal(true);
