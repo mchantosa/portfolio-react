@@ -17,6 +17,22 @@ const projectCarouselTheme = {
   },
 };
 
+const prevNextArrowFormat = [
+  "text-anchorBlue",
+  "!absolute",
+  "top-2/4",
+  "-translate-y-2/4",
+  "cursor-pointer",
+  "border-transparent",
+  "focus:border-transparent",
+  "focus:outline-none",
+  // "flex", // Enable flexbox layout
+  // "justify-center", // Center horizontally
+  // "items-center", // Center vertically
+  // "w-12", // Set a width for the button container
+  // "h-12", // Set a height for the button container
+];
+
 const carouselProps: CarouselProps = {
   transition: { type: "tween", duration: 0.4 },
   autoplay: true,
@@ -40,9 +56,8 @@ const carouselProps: CarouselProps = {
   prevArrow: ({ handlePrev }) => (
     <IconButton
       variant="text"
-      size="lg"
       onClick={handlePrev}
-      className="text-anchorBlue !absolute top-2/4 -translate-y-2/4 cursor-pointer"
+      className={[...prevNextArrowFormat, "!left-0"].join(" ")}
       placeholder={undefined}
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
@@ -58,7 +73,6 @@ const carouselProps: CarouselProps = {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          //d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
           d="M10.5 19.5L3 12l7.5-7.5"
         />
       </svg>
@@ -67,9 +81,8 @@ const carouselProps: CarouselProps = {
   nextArrow: ({ handleNext }) => (
     <IconButton
       variant="text"
-      size="lg"
       onClick={handleNext}
-      className="text-anchorBlue !absolute top-2/4 !right-0 -translate-y-2/4 cursor-pointer"
+      className={[...prevNextArrowFormat, "!right-0"].join(" ")}
       placeholder={undefined}
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
@@ -85,7 +98,6 @@ const carouselProps: CarouselProps = {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          // d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
           d="M13.5 4.5L21 12m0 0l-7.5 7.5"
         />
       </svg>
