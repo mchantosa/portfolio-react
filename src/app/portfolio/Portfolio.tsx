@@ -10,6 +10,9 @@ import { projectCarousel as projectCarouselAWordle } from "./a-wordle/data";
 import { projectInformation as projectInformationAWordle } from "./a-wordle/data";
 import { projectCarousel as projectCarouselPortfolio } from "./portfolio/data";
 import { projectInformation as projectInformationPortfolio } from "./portfolio/data";
+import { projectCarousel as projectCarouselCrowdfund } from "./crowdfund/data";
+import { projectInformation as projectInformationCrowdfund } from "./crowdfund/data";
+
 const pTailwind = paragraphTailwind;
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = React.useState("*");
@@ -37,6 +40,14 @@ export default function Portfolio() {
       filter: "*reacthtmlcssjavascript",
       projectCarousel: projectCarouselPortfolio(),
       projectInformation: projectInformationPortfolio(),
+    },
+    {
+      imageLocation: "/images/portfolio/crowdfund/home.gif",
+      link: "/portfolio/crowdfund",
+      title: "Crowdfund",
+      filter: "*react",
+      projectCarousel: projectCarouselCrowdfund(),
+      projectInformation: projectInformationCrowdfund(),
     },
   ];
   return (
