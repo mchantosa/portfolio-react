@@ -12,9 +12,6 @@ const projectCarouselTheme = {
           height: "h-8/12",
           padding: "p-8",
         },
-        // arrow: {
-        //   color: "text-anchorBlue", // Match arrow color to dots
-        // },
       },
     },
   },
@@ -45,7 +42,10 @@ const carouselProps: CarouselProps = {
       variant="text"
       size="lg"
       onClick={handlePrev}
-      className="text-anchorBlue !absolute top-2/4 -translate-y-2/4"
+      className="text-anchorBlue !absolute top-2/4 -translate-y-2/4 cursor-pointer"
+      placeholder={undefined}
+      onPointerEnterCapture={undefined}
+      onPointerLeaveCapture={undefined}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,10 @@ const carouselProps: CarouselProps = {
       variant="text"
       size="lg"
       onClick={handleNext}
-      className="text-anchorBlue !absolute top-2/4 !right-0 -translate-y-2/4"
+      className="text-anchorBlue !absolute top-2/4 !right-0 -translate-y-2/4 cursor-pointer"
+      placeholder={undefined}
+      onPointerEnterCapture={undefined}
+      onPointerLeaveCapture={undefined}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
