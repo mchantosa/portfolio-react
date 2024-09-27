@@ -1,396 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Resume</title>
-        <!-- Favicons -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="icon" type="image/x-icon" href="/images/favicons/favicon.ico">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <style>
-            /* WHITESPACE RESET */
-            ul, ol { list-style: none; }
-            h1, h2, h3, h4, h5, h6, pre, code { font-size: 1rem; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+    <!-- Favicons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="/images/favicons/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* WHITESPACE RESET */
+      ul,
+      ol {
+        list-style: none;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      pre,
+      code {
+        font-size: 1rem;
+      }
 
-            ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote,
-            fieldset,input, dl, dt, dd, figure, figcaption {
-            margin: 0;
-            padding: 0;
-            }
+      ul,
+      ol,
+      li,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      pre,
+      form,
+      body,
+      html,
+      p,
+      blockquote,
+      fieldset,
+      input,
+      dl,
+      dt,
+      dd,
+      figure,
+      figcaption {
+        margin: 0;
+        padding: 0;
+      }
 
-            a img, :link img, :visited img, fieldset { border: none; }
-            address { font-style: normal; }
+      a img,
+      :link img,
+      :visited img,
+      fieldset {
+        border: none;
+      }
+      address {
+        font-style: normal;
+      }
 
-            header, section, article, nav, footer, hgroup, details, summary, figure, main {
-            display: block;
-            }
+      header,
+      section,
+      article,
+      nav,
+      footer,
+      hgroup,
+      details,
+      summary,
+      figure,
+      main {
+        display: block;
+      }
 
-            mark {
-            color: inherit;
-            background: transparent;
-            }
+      mark {
+        color: inherit;
+        background: transparent;
+      }
 
-            abbr { border: none; }
-            summary::-webkit-details-marker { display: none; }
-             /* END WHITESPACE RESET */
-        </style>
-        <style>
-            html {
-                font-family: "Roboto Condensed", sans-serif;
-                font-size: 14px;
-            }
-            body {
-                margin: 0;
-                padding: 0;
-                width: 8.5in;
-                height: 11in;
-            }
-            .resume {
-                display: flex;
-            }
-            .left-side {
-                float: left;
-                width: 30%;
-                height: 11in;
-                /* background-color: #204045; */
-                background-color:#154360;
-                color:#f4f6f7;
-                /* color:#204045; */
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .right-side {
-                float: right;
-                width: 70%;
-                height: 11in;
-                background-color:#f4f6f7;
-                color:#204045;
-                display: flex;
-                flex-direction: column;
-                align-items:left;
-            }
+      abbr {
+        border: none;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      /* END WHITESPACE RESET */
+    </style>
+    <style>
+      html {
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: 14px;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        width: 8.5in;
+        height: 11in;
+      }
+      .resume {
+        display: flex;
+      }
+      .left-side {
+        float: left;
+        width: 30%;
+        height: 11in;
+        /* background-color: #204045; */
+        background-color: #154360;
+        color: #f4f6f7;
+        /* color:#204045; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .right-side {
+        float: right;
+        width: 70%;
+        height: 11in;
+        background-color: #f4f6f7;
+        color: #204045;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+      }
 
-            /* LEFT SIDE */
-            .left-side .profile-picture {
-                width: 90%;
-                border-radius: 50%;
-                overflow: hidden; 
-                margin-top: 24px;
-            }
-            .left-side .name-title, 
-            .left-side .contact-info, 
-            .left-side .skills, 
-            .left-side .leadership  {
-                padding: 24px;
-            }
-            .left-side a{
-                color:#e9e6e4
-            }
-            .left-side h2 {
-                margin-left: 16px;
-                margin-right: 16px;
-                padding-bottom: 8px;
-                border-bottom: #f4f6f7 2px solid;
-                font-size: 1.25rem;
-                font-weight: 400;
-                margin-bottom: 8px;
-                text-align: center;
-            }
-                /* NAME AND TITLE */
-            .left-side .name-title {
-                text-align: center;
-            }
-            .left-side .name-title h1 {
-                font-size: 2.5rem;
-                font-weight: 300;
-                padding-bottom: 6px;
-            }
-            .left-side .name-title h3 {
-                font-size: 1.5rem;
-                font-weight: 300;
-            }
-                /* CONTACT INFO */
-            .left-side .contact-info .info-container {
-                display: flex;
-                align-items: center;
-                padding: 4px 0;
-            }
-            .left-side .contact-info .info-container p {
-                word-break: break-word;
-            }
+      /* LEFT SIDE */
+      .left-side .profile-picture {
+        width: 90%;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-top: 24px;
+      }
+      .left-side .name-title,
+      .left-side .contact-info,
+      .left-side .skills,
+      .left-side .leadership {
+        padding: 24px;
+      }
+      .left-side a {
+        color: #e9e6e4;
+      }
+      .left-side h2 {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding-bottom: 8px;
+        border-bottom: #f4f6f7 2px solid;
+        font-size: 1.25rem;
+        font-weight: 400;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+      /* NAME AND TITLE */
+      .left-side .name-title {
+        text-align: center;
+      }
+      .left-side .name-title h1 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        padding-bottom: 6px;
+      }
+      .left-side .name-title h3 {
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+      /* CONTACT INFO */
+      .left-side .contact-info .info-container {
+        display: flex;
+        align-items: center;
+        padding: 4px 0;
+      }
+      .left-side .contact-info .info-container p {
+        word-break: break-word;
+      }
 
-                /* SKILLS */
-            .left-side .skills {
-                text-align: center;
-                font-size: 1.15rem;
-                font-weight: 300;
-            }
+      /* SKILLS */
+      .left-side .skills {
+        text-align: center;
+        font-size: 1.15rem;
+        font-weight: 300;
+      }
 
-                /* LEADERSHIP */
-            .left-side .leadership {
-                width: 196px;
-            }
+      /* LEADERSHIP */
+      .left-side .leadership {
+        width: 196px;
+      }
 
-            .left-side .leadership p{
-                display: flex;
-                justify-content: space-between;
-            }
-            .left-side .leadership p.subtitle{
-                font-size: 0.9rem;
-                font-weight: 300;
-                font-style: italic;
-            }
+      .left-side .leadership p {
+        display: flex;
+        justify-content: space-between;
+      }
+      .left-side .leadership p.subtitle {
+        font-size: 0.9rem;
+        font-weight: 300;
+        font-style: italic;
+      }
 
-            /* RIGHT SIDE */
-            .right-side .hero, 
-            .right-side .education, 
-            .right-side .experience {
-                padding-left: 24px;
-                padding-right: 24px;
-                padding-bottom: 8px;
-            }
-            .right-side h2 {
-                margin-left: 48px;
-                margin-right: 48px;
-                margin-bottom: 12px;
-                padding-bottom: 4px;
-                border-bottom: #CA6F1E 3px solid;
-                color:#204045;
-                font-size: 1.25rem;
-                font-weight: 600;
-                text-align: center;
-            }
-                /* HERO */
-            .right-side .hero{
-                padding-top: 24px;
-            }
-                /* EXPERIENCE */
-            .right-side .experience h3{
-                display: flex;
-                justify-content: space-between;
-            }
-            .right-side .experience h4 {
-                font-size: 1rem;
-                font-weight: 400;
-                font-style: italic;
-            }
-            .right-side .experience .content {
-                padding: 8px;
-            }
-            .right-side .experience .content ul {
-                padding-left: 12px;
-            }
-            .right-side .experience .content ul li {
-                list-style-type: square;
-                padding-bottom: 4px;
-            }
-            .right-side .experience .content ul li:last-child {
-                padding-bottom: 0;
-            }
-            .right-side .experience .dual-list{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-            }
-            .right-side .experience .dual-list .left-list {
-                width: 45%;
-            }
-            .right-side .experience .dual-list .right-list {
-                width: 45%;
-            }
+      /* RIGHT SIDE */
+      .right-side .hero,
+      .right-side .education,
+      .right-side .experience {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-bottom: 8px;
+      }
+      .right-side h2 {
+        margin-left: 48px;
+        margin-right: 48px;
+        margin-bottom: 12px;
+        padding-bottom: 4px;
+        border-bottom: #ca6f1e 3px solid;
+        color: #204045;
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-align: center;
+      }
+      /* HERO */
+      .right-side .hero {
+        padding-top: 24px;
+      }
+      /* EXPERIENCE */
+      .right-side .experience h3 {
+        display: flex;
+        justify-content: space-between;
+      }
+      .right-side .experience h4 {
+        font-size: 1rem;
+        font-weight: 400;
+        font-style: italic;
+      }
+      .right-side .experience .content {
+        padding: 8px;
+      }
+      .right-side .experience .content ul {
+        padding-left: 12px;
+      }
+      .right-side .experience .content ul li {
+        list-style-type: square;
+        padding-bottom: 4px;
+      }
+      .right-side .experience .content ul li:last-child {
+        padding-bottom: 0;
+      }
+      .right-side .experience .dual-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .right-side .experience .dual-list .left-list {
+        width: 45%;
+      }
+      .right-side .experience .dual-list .right-list {
+        width: 45%;
+      }
 
-                /* EDUCATION */
-            .right-side .education p {
-                display: flex;
-                justify-content: space-between;
-            }
-            
-        </style>
-        <script src="https://kit.fontawesome.com/48b9c90b27.js" crossorigin="anonymous"></script> 
-    </head>
-    <body>
-        <div class="resume">
-            <div class="left-side">
-                <img class="profile-picture" src="./images/printable-resume/profile.jpg" alt="profile picture">
-                <div class="name-title">
-                    <h1>Megan Chantosa</h1>
-                    <h3>Software Engineer</h3>
-                </div>
-                <div class="contact-info">
-                    <h2>Contact Information</h2> 
-                    <div class="info-container">
-                        <i class="fa-solid fa-envelope"></i> 
-                        <span>&nbsp;&nbsp;</span>
-                        <p><a href="mailto:meganemmamoore@gmail.com">meganemmamoore@gmail.com</a></p>
-                    </div>
-                    <div class="info-container">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>&nbsp;&nbsp;</span>
-                        <p>336-978-4359</p>
-                    </div>
-                    <div class="info-container">
-                        <i class="fa-solid fa-briefcase"></i>
-                        <span>&nbsp;&nbsp;</span>
-                        <p><a href="https://megan.chantosa.com" target="_blank">megan.chantosa.com</a></p>
-                    </div>
-                    <div class="info-container">
-                        <i class="fa-brands fa-linkedin"></i>
-                        <span>&nbsp;&nbsp;</span>
-                        <p><a href="https://www.linkedin.com/in/mchantosa" target="_blank">linkedin.com/in/mchantosa</a></p>
-                    </div>
-                    <div class="info-container">
-                        <i class="fa-brands fa-github"></i>
-                        <span>&nbsp;&nbsp;</span>
-                        <p><a href="https://github.com/mchantosa" target="_blank">github.com/mchantosa</a></p> 
-                    </div>
-                </div>
-                <div class="skills">
-                    <h2>Skills</h2>
-                    <p>
-                        JavaScript, &nbsp;
-                        TypeScript, &nbsp;
-                        Solidity, &nbsp;
-                        Python, &nbsp;
-                        Java, &nbsp;
-                        R, &nbsp;
-                        MatLab, &nbsp;
-                     
-                        Node, &nbsp;
-                        Deno, &nbsp;
-                        JRM, &nbsp;
-                    
-                        React, &nbsp;
-                        Express, &nbsp;
-                        Fresh, &nbsp;
-                    
-                        PostgreSQL, &nbsp;
-                        Supabase, &nbsp;
-                        Deno-KV, &nbsp;
-                    
-                        Docker, &nbsp;
-                        AWS, &nbsp;
-                        Git, &nbsp;
-                   
-                        Jest, &nbsp;
-                        Cypress, &nbsp;
-                        Playwright, &nbsp;
-                        Postman, &nbsp;
-                        jUnit, &nbsp;
-                    
-                        HTML, &nbsp;
-                        CSS, &nbsp;
-                        Tailwind, &nbsp;
-                        Bootstrap, &nbsp;
-                        Daisy UI, &nbsp;
-                        Figma
-                    
-                        Agile, &nbsp;
-                        Scrum, &nbsp;
-                        Jira, &nbsp;
-                        Azure DevOps
-                    </p>
-                </div>
-                <div class="leadership">
-                    <h2>Leadership</h2>
-                    <p><span>NCO, US Army</span><span>1999-2003</span></p>
-                    <p class="subtitle">Non Commissioned Officer</p>
-                    <p class="subtitle">Earned spurs</p>
-                </div>
-            </div>
-            <div class="right-side">
-                <div class="hero">
-                    <h2>About Me</h2>
-                    <p>I am a software engineer, mathematician, and veteran. I spent several years doing Modeling and Simulation (primarily DOD and DHS), then did a career transition to the software development space. In my spare time you would likely find me reading <span style="text-decoration: underline;">The Expanse</span>, playing MTG, patronizing my local coffee shop, doing pushups, or hiking in the beautiful PNW.</p>
-                </div>               
-                <div class="experience">
-                    <h2>Experience</h2>
-                    <div class="experience-item">
-                        <h3>
-                            <span>Software Developer - AI Trainer | DataAnnotation, Seattle, WA</span>
-                            <span>Mar 2024 – present</span>
-                        </h3>
-                        <div class="content">
-                            <ul>
-                                <li>Produce diverse coding challenges and solutions for training AI models</li>
-                                <li>Evaluate code quality produced by AI models for correctness and performance</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <h3>
-                            <span>Software Engineer | Freelance Developer, Seattle, WA</span>
-                            <span>May 2023 - Present</span>
-                        </h3>
-                        <div class="content">
-                            <ul>
-                                <li>Delivered a prototype of smart contract application using Figma.</li>
-                                <li>Manage , maintain, and improve multiple WordPress websites for client.</li>
-                                <li>Created <a href="https://innercircleprm.com/" target="_blank">InnerCircle</a>, a personal relation manager. Built with Preact, Deno-KV, and Tailwind.</li>
-                                <li>Created <a href="https://githubraw.com/mchantosa/demos/main/awordle.html" target="_blank">aWordle</a>, a word guessing game strongly resembling Wordle. Built as a single page vanilla HTML/CSS/JavaScript, "gist-able" application.</li>
-                                <li>Freelance <a href="https://hakuandnoel3dprints.com/ryan" target="_blank">portfolio</a> creation, client got the position for which the portfolio was created.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <h3>
-                            <span>Caregiver | Self-Employed, Seattle, WA</span>
-                            <span>Jun 2016 - Oct 2021</span>
-                        </h3>
-                        <div class="content">
-                            <p>Brought work-life balance to my home</p>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <h3>
-                            <span>SDET | Cortana Corporation, Falls Church, VA</span>
-                            <span>Aug 2013 – Jun 2016</span>
-                        </h3>
-                        <h4>Software Development Engineer in Test</h4>
-                        <div class="content">
-                            <ul>
-                                <li>Conducted diverse testing activities resulting in increased test frequency by 500% and improved scenario coverage by factor of 12, leading to delivery of near bug-free software within deadlines</li>
-                                <li>Automate testing processes using Java and Selenium resulting in 100%  improvement of automated test capability</li>
-                                <li>Implemented and managed Agile testing methodologies for Nonconventional Exploitation Factors Data System (NEFDS) with JIRA ensuring consistent delivery of high-quality software through rigorous testing</li>
-                                <li>Developed comprehensive QA deliverables utilizing Microsoft Word serving as essential documentation for user acceptance testing (UAT) and enabling software allowlisting on restricted networks</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <h3>
-                            <span>Business Analyst/QA Manager | 1901 Group, Reston, VA</span>
-                            <span>June 2014 - Sep 2015</span>
-                        </h3>
-                        <div class="content">
-                            <ul>
-                                <li>Managed and optimized team activities in Microsoft Agile DevOps resulting in 100% improved customer satisfaction
-                                </li>
-                                <li>Successfully served as scrum master, effectively clearing roadblocks for team of 6 developers, 3 QA resources, and IT support across 4 branches of development
-                                </li>
-                                <li>Gathered requirements and oversaw testing efforts for all software development initiatives, employing Agile DevOps best practices resulting in optimized resource management and 4 branches of development being simultaneously maintained
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <h3>
-                            <span>Operations Analyst | Metron, Reston, VA</span>
-                            <span>Jan 2009 - Feb 2013</span>
-                        </h3>
-                        <div class="content">
-                            <p>Provided modeling and simulation analysis and support to all phases of DoD acquisition process utilizing Naval Simulation System and range of simulation tools and methodologies, where contributions significantly informed acquisition decisions</p>
-                        </div>
-                    </div>
-                </div> 
-                <div class="education">
-                    <h2>Education</h2>
-                    <p><span>Fullstack Web Development- JavaScript Track, Launch School</span><span>May 2023</span></p>
-                    <p><span>MA Mathematics, Wake Forest University</span><span>June 2008</span></p>
-                    <p><span>BS Mathematics, North Carolina State University</span><span>Aug 2006</span></p>
-                </div>
-            </div>
+      /* EDUCATION */
+      .right-side .education p {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/48b9c90b27.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="resume">
+      <div class="left-side">
+        <img
+          class="profile-picture"
+          src="./images/printable-resume/profile.jpg"
+          alt="profile picture"
+        />
+        <div class="name-title">
+          <h1>Megan Chantosa</h1>
+          <h3>Software Engineer</h3>
         </div>
-    </body>
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <div class="info-container">
+            <i class="fa-solid fa-envelope"></i>
+            <span>&nbsp;&nbsp;</span>
+            <p>
+              <a href="mailto:meganemmamoore@gmail.com"
+                >meganemmamoore@gmail.com</a
+              >
+            </p>
+          </div>
+          <div class="info-container">
+            <i class="fa-solid fa-phone"></i>
+            <span>&nbsp;&nbsp;</span>
+            <p>336-978-4359</p>
+          </div>
+          <div class="info-container">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>&nbsp;&nbsp;</span>
+            <p>
+              <a href="https://megan.chantosa.com" target="_blank"
+                >megan.chantosa.com</a
+              >
+            </p>
+          </div>
+          <div class="info-container">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>&nbsp;&nbsp;</span>
+            <p>
+              <a href="https://www.linkedin.com/in/mchantosa" target="_blank"
+                >linkedin.com/in/mchantosa</a
+              >
+            </p>
+          </div>
+          <div class="info-container">
+            <i class="fa-brands fa-github"></i>
+            <span>&nbsp;&nbsp;</span>
+            <p>
+              <a href="https://github.com/mchantosa" target="_blank"
+                >github.com/mchantosa</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="skills">
+          <h2>Skills</h2>
+          <p>
+            JavaScript, &nbsp; TypeScript, &nbsp; Solidity, &nbsp; Python,
+            &nbsp; Java, &nbsp; R, &nbsp; MatLab, &nbsp; Node, &nbsp; Deno,
+            &nbsp; JRM, &nbsp; React, &nbsp; Express, &nbsp; Fresh, &nbsp;
+            PostgreSQL, &nbsp; Supabase, &nbsp; Deno-KV, &nbsp; Docker, &nbsp;
+            AWS, &nbsp; Git, &nbsp; Jest, &nbsp; Cypress, &nbsp; Playwright,
+            &nbsp; Postman, &nbsp; jUnit, &nbsp; HTML, &nbsp; CSS, &nbsp;
+            Tailwind, &nbsp; Bootstrap, &nbsp; Daisy UI, &nbsp; Figma Agile,
+            &nbsp; Scrum, &nbsp; Jira, &nbsp; Azure DevOps
+          </p>
+        </div>
+        <div class="leadership">
+          <h2>Leadership</h2>
+          <p><span>NCO, US Army</span><span>1999-2003</span></p>
+          <p class="subtitle">Non Commissioned Officer</p>
+          <p class="subtitle">Earned spurs</p>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="hero">
+          <h2>About Me</h2>
+          <p>
+            I am a software engineer, mathematician, and veteran. I spent
+            several years doing Modeling and Simulation, then did a career
+            transition. In my spare time you would likely find me reading
+            <span style="text-decoration: underline">The Expanse</span>, playing
+            MTG, patronizing my local coffee shop, doing pushups, or hiking in
+            the beautiful PNW.
+          </p>
+        </div>
+        <div class="experience">
+          <h2>Experience</h2>
+          <div class="experience-item">
+            <h3>
+              <span>Software Engineer | Freelance Developer, Seattle, WA</span>
+              <span>May 2023 - Present</span>
+            </h3>
+            <div class="content">
+              <ul>
+                <li>
+                  Created
+                  <a
+                    href="https://crowdfund.megan.chantosa.com/"
+                    target="_blank"
+                    >Crowdfund</a
+                  >, a decentralized application for crowdfunding. Built with
+                  NextJS, MaterialUI, Solidity, and Hardhat, supporting multiple
+                  Ethereum networks.
+                </li>
+                <li>
+                  Delivered a prototype of smart contract application using
+                  Figma.
+                </li>
+                <li>
+                  Manage , maintain, and improve multiple WordPress websites for
+                  client.
+                </li>
+                <li>
+                  Created
+                  <a href="https://innercircleprm.com/" target="_blank"
+                    >InnerCircle</a
+                  >, a personal relation manager. Built with Preact, Deno-KV,
+                  and Tailwind.
+                </li>
+                <li>
+                  Created
+                  <a
+                    href="https://githubraw.com/mchantosa/demos/main/awordle.html"
+                    target="_blank"
+                    >aWordle</a
+                  >, a word guessing game strongly resembling Wordle. Built as a
+                  single page vanilla HTML/CSS/JavaScript, "gist-able"
+                  application.
+                </li>
+                <li>
+                  Freelance
+                  <a href="https://hakuandnoel3dprints.com/ryan" target="_blank"
+                    >portfolio</a
+                  >
+                  creation, client got the position for which the portfolio was
+                  created.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience-item">
+            <h3>
+              <span
+                >Software Developer - AI Trainer | DataAnnotation, Seattle,
+                WA</span
+              >
+              <span>Mar 2024 – Jul 2024</span>
+            </h3>
+            <div class="content">
+              <ul>
+                <li>
+                  Produce diverse coding challenges and solutions for training
+                  AI models
+                </li>
+                <li>
+                  Evaluate code quality produced by AI models for correctness
+                  and performance
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience-item">
+            <h3>
+              <span>Caregiver | Self-Employed, Seattle, WA</span>
+              <span>Jun 2016 - Oct 2021</span>
+            </h3>
+            <div class="content">
+              <p>Brought work-life balance to my home</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <h3>
+              <span>SDET | Cortana Corporation, Falls Church, VA</span>
+              <span>Aug 2013 – Jun 2016</span>
+            </h3>
+            <h4>Software Development Engineer in Test</h4>
+            <div class="content">
+              <ul>
+                <li>
+                  Conducted diverse testing activities resulting in increased
+                  test frequency by 500% and improved scenario coverage by
+                  factor of 12, leading to delivery of near bug-free software
+                  within deadlines
+                </li>
+                <li>
+                  Automate testing processes using Java and Selenium resulting
+                  in 100% improvement of automated test capability
+                </li>
+                <li>
+                  Implemented and managed Agile testing methodologies for
+                  Nonconventional Exploitation Factors Data System (NEFDS) with
+                  JIRA ensuring consistent delivery of high-quality software
+                  through rigorous testing
+                </li>
+                <li>
+                  Developed comprehensive QA deliverables utilizing Microsoft
+                  Word serving as essential documentation for user acceptance
+                  testing (UAT) and enabling software allowlisting on restricted
+                  networks
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience-item">
+            <h3>
+              <span>Business Analyst/QA Manager | 1901 Group, Reston, VA</span>
+              <span>June 2014 - Sep 2015</span>
+            </h3>
+            <div class="content">
+              <ul>
+                <li>
+                  Managed and optimized team activities in Microsoft Agile
+                  DevOps resulting in 100% improved customer satisfaction
+                </li>
+                <li>
+                  Successfully served as scrum master, effectively clearing
+                  roadblocks for team of 6 developers, 3 QA resources, and IT
+                  support across 4 branches of development
+                </li>
+                <li>
+                  Gathered requirements and oversaw testing efforts for all
+                  software development initiatives, employing Agile DevOps best
+                  practices resulting in optimized resource management and 4
+                  branches of development being simultaneously maintained
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience-item">
+            <h3>
+              <span>Operations Analyst | Metron, Reston, VA</span>
+              <span>Jan 2009 - Feb 2013</span>
+            </h3>
+            <div class="content">
+              <p>
+                Provided modeling and simulation analysis to support and inform
+                the acquisition process.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="education">
+          <h2>Education</h2>
+          <p>
+            <span
+              >Fullstack Web Development- JavaScript Track, Launch School</span
+            ><span>May 2023</span>
+          </p>
+          <p>
+            <span>MA Mathematics, Wake Forest University</span
+            ><span>June 2008</span>
+          </p>
+          <p>
+            <span>BS Mathematics, North Carolina State University</span
+            ><span>Aug 2006</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

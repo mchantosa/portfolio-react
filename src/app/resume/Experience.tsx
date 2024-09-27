@@ -6,22 +6,6 @@ export default function Experience() {
   return (
     <SubSection id="experience" title="ProfessionalExperience">
       <ExperienceItem
-        jobTitle="Software Developer - AI Trainer"
-        fromTo="Mar 2024 - Present"
-        where="DataAnnotations,Seattle, WA"
-      >
-        <ul className={ulTailwind.join(" ")}>
-          <li className={liTailwind.join(" ")}>
-            Produce diverse coding challenges and solutions for training AI
-            models
-          </li>
-          <li className={liTailwind.join(" ")}>
-            Evaluate code quality produced by AI models for correctness and
-            performance
-          </li>
-        </ul>
-      </ExperienceItem>
-      <ExperienceItem
         jobTitle="Software Engineer"
         fromTo="May 2023 - Present"
         where="Freelance, Seattle, WA"
@@ -82,6 +66,22 @@ export default function Experience() {
             </a>{" "}
             creation, client got the position for which the portfolio was
             created.
+          </li>
+        </ul>
+      </ExperienceItem>
+      <ExperienceItem
+        jobTitle="Software Developer - AI Trainer"
+        fromTo="Mar 2024 - Jul2024"
+        where="DataAnnotations,Seattle, WA"
+      >
+        <ul className={ulTailwind.join(" ")}>
+          <li className={liTailwind.join(" ")}>
+            Produce diverse coding challenges and solutions for training AI
+            models
+          </li>
+          <li className={liTailwind.join(" ")}>
+            Evaluate code quality produced by AI models for correctness and
+            performance
           </li>
         </ul>
       </ExperienceItem>
