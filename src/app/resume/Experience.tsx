@@ -12,6 +12,9 @@ export default function Experience() {
       >
         <ul className={ulTailwind.join(" ")}>
           <li className={liTailwind.join(" ")}>
+            Migrated customer&apos;s website from WordPress to NextJS.
+          </li>
+          <li className={liTailwind.join(" ")}>
             Created{" "}
             <a
               href="https://crowdfund.megan.chantosa.com/"
