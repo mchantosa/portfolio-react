@@ -17,7 +17,7 @@ export default function Experience() {
           <li className={liTailwind.join(" ")}>
             Created{" "}
             <a
-              href="https://crowdfund.megan.chantosa.com/"
+              href="https://crowdfunding-megan.chantosa.com/"
               target="_blank"
               className={aTailwind.join(" ")}
             >

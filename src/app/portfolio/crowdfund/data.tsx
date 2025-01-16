@@ -33,7 +33,7 @@ export const projectInformation: () => React.ReactNode = () => {
       heading: "Project URL",
       description: (
         <a
-          href="https://crowdfund.megan.chantosa.com"
+          href="https://crowdfunding-megan.chantosa.com"
           target="_blank"
           className={aTailwind.join(" ")}
         >
